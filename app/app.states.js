@@ -3,7 +3,7 @@
  * more info on UI-Router states can be found at
  * https://github.com/angular-ui/ui-router/wiki
  */
-angular.module('angularstrapApp')
+angular.module('mealtime-frontend')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
     // any unknown URLS go to 404

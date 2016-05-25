@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('angularstrapApp')
+    angular.module('mealtime-frontend')
         .controller('aboutController', aboutController);
 
     aboutController.$inject = ["$scope", "$http", "$window", "$q", "asyncService"];

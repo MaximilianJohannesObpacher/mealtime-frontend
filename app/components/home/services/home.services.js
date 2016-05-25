@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('angularstrapApp.homeServices', [])
+    angular.module('mealtime-frontend.homeServices', [])
         .service('asyncService', asyncService);
 
     asyncService.$inject = ['$http', '$q'];

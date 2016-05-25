@@ -4,9 +4,9 @@
 
 angular
     
-    .module('angularstrapApp', [
+    .module('mealtime-frontend', [
         'ui.router',
-        'angularstrapApp.homeServices'
+        'mealtime-frontend.homeServices'
     ])
 
     .constant('CONFIG', 

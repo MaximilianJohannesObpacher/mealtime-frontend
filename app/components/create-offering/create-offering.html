@@ -4,21 +4,34 @@
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
             <div class="row" style="margin-top: 1%">
-                <input type="text" ng-model="app.meal" placeholder="What meal do you want to offer?"/>
+                <input type="text" ng-model="app.name" placeholder="What meal do you want to offer?"/>
             </div>
             <div class="row" style="margin-top: 1%; height: auto ">
-                <input ng-model="app.chef" placeholder="Description" style="width: 100%; height: 100%"/>
+                <textarea ng-model="app.description" placeholder="Description" rows="5" style="width: 100%; height: 100%"/>
             </div>
             <div class="row" style="margin-top: 1%">
                 <input type="number" ng-model="app.price" placeholder="How much is it?"/>
             </div>
             <div class="row" style="margin-top: 1%">
-
+                <input type="number" ng-model="app.count" placeholder="How many meals?"/>
             </div>
+            <div class="row" style="margin-top: 1%">
+                <input type="text" ng-model="app.address" placeholder="Where to pick up?"/>
+            </div>
+
+
+            <div class="row">
+                <input type="checkbox" ng-model="app.onSite" >
+            </div>
+            <div class="row">
+                <input type="checkbox" ng-model="app.takeAway"/>
+            </div>
+
             <div class="row" style="margin-top: 1%">
                 <nav>
                     <form action="/#/offeringsPage" style="width: 100%; height: 30px">
-                        <button ng-click="app.saveOffering(app.meal, app.chef, app.price)"
+                        <button ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
+                        app.onSite, app.takeAway)"
                                 style="width: 100%; height: 100%">
                             Save Offering
                         </button>
@@ -29,8 +42,11 @@
         <div class="col-sm-4"></div>
     </div>
 
-    <style>
-        div .row {
+
+
+<style>
+
+    div .row {
             height: 30px;
             width: 100%;
         }
