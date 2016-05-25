@@ -1,0 +1,43 @@
+<div ng_controller="CreateOfferingController as app">
+
+    <div class="row" style="margin-top: 15%">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="row" style="margin-top: 1%">
+                <input type="text" ng-model="app.meal" placeholder="What meal do you want to offer?"/>
+            </div>
+            <div class="row" style="margin-top: 1%; height: auto ">
+                <input ng-model="app.chef" placeholder="Description" style="width: 100%; height: 100%"/>
+            </div>
+            <div class="row" style="margin-top: 1%">
+                <input type="number" ng-model="app.price" placeholder="How much is it?"/>
+            </div>
+            <div class="row" style="margin-top: 1%">
+
+            </div>
+            <div class="row" style="margin-top: 1%">
+                <nav>
+                    <form action="/#/offeringsPage" style="width: 100%; height: 30px">
+                        <button ng-click="app.saveOffering(app.meal, app.chef, app.price)"
+                                style="width: 100%; height: 100%">
+                            Save Offering
+                        </button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+    <style>
+        div .row {
+            height: 30px;
+            width: 100%;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</div>

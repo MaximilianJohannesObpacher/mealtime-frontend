@@ -23,11 +23,11 @@ angular.module('angularstrapApp')
             url: '/404',
             templateUrl: 'app/shared/404.html'
         })
-        .state('about', {
+        .state('createOffering', {
             // we'll add another state soon
-            url: '/about',
-            templateUrl: 'app/components/about/views/about.view.html',
-            controller: 'aboutController',
+            url: '/createOffering',
+            templateUrl: 'app/components/create-offering/create-offering.html',
+            controller: 'CreateOfferingController',
             controllerAs: 'ctrl'
         });
 }]);
