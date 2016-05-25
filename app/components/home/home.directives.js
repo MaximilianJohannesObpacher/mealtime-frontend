@@ -1,11 +1,7 @@
 angular.module('angularstrapApp')
     .directive('heroBlock', function() {
         return {
-            templateUrl: '/app/components/home/views/heroblock.view.html'
+            templateUrl: '/app/components/home/views/home.html'
         };
-    })
-    .directive('subSection', function() {
-        return {
-            templateUrl: '/app/components/home/views/subsection.view.html'
-        };
+
 });
