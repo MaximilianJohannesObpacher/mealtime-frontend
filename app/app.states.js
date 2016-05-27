@@ -29,5 +29,12 @@ angular.module('mealtime-frontend')
             templateUrl: 'app/components/create-offering/create-offering.html',
             controller: 'CreateOfferingController',
             controllerAs: 'ctrl'
+        })
+        .state('showOfferings', {
+            // we'll add another state soon
+            url: '/showOfferings',
+            templateUrl: 'app/components/show-offerings/show-offerings.html',
+            controller: 'ShowOfferingsController',
+            controllerAs: 'ctrl'
         });
 }]);

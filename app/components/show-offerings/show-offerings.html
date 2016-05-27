@@ -1,0 +1,15 @@
+<div ng_controller="ShowOfferingsController as resCon">
+
+    <ul>
+        <li ng-repeat="offering in resCon.offerings">
+             {{ offering.price }}
+        </li>
+    </ul>
+
+    <nav>
+        <form action="/">
+            <button>Back Home</button>
+        </form>
+    </nav>
+
+</div>
