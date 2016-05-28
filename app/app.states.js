@@ -35,6 +35,6 @@ angular.module('mealtime-frontend')
             url: '/showOfferings',
             templateUrl: 'app/components/show-offerings/show-offerings.html',
             controller: 'ShowOfferingsController',
-            controllerAs: 'ctrl'
+            controllerAs: 'showOfferCtrl'
         });
 }]);
