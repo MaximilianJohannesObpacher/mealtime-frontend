@@ -2,7 +2,7 @@
  * Created by MaximilianObpacher on 27.05.16.
  */
 
-var mealtime = angular.module("ShowOfferingsController", []);
+var mealtime = angular.module("mealtime-frontend");
 
 mealtime.controller("ShowOfferingsController", function ($http) {
     var app = this;

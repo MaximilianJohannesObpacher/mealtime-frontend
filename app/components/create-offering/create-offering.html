@@ -1,20 +1,23 @@
 <div ng_controller="CreateOfferingController as app">
 
     <div class="row" style="margin-top: 2%">
-        <form action="/#/showOfferings" style="width: 100%; height: 30px" enctype="multipart/form-data">
+        <form style="width: 100%; height: 30px" enctype="multipart/form-data">
             <nav>
-
                 <div class="col-sm-4">
                     <div class="pictureuploadfieldcontainer" style="display:table;">
-                    <div class="pictureuploadfield" nv-file-over="" uploader="uploader" style="display:table-cell">
-                        Meal Picture
+                        <div class="pictureuploadfield" ng-model="app.picture" nv-file-over=""
+                             style="display:table-cell">
+                            Meal Picture
+                        </div>
                     </div>
+                    <div style=" margin-left: 20%">
+                        <input type="file" file-model="myFile"
+                               style="color:white; margin-top: 5%"/>
+                        <button style="background-color: #408040;color:white;
+                border-color: #499349;margin-top: 2%" ng-click="uploadFile()">upload me
+                        </button>
                     </div>
-                    <div>
-                        <input type="file" nv-file-select="" uploader="uploader"  style="color:white; margin-top: 5%; margin-left: 20%;
-                  "/>
-                    </div>
-                    -->
+
 
                 </div>
                 <div class="col-sm-6">
@@ -58,16 +61,21 @@
 
                     <div class="row" style="margin-top: 5%">
                         <div class="col-xs-1"></div>
-                        <button  style=" background-color: #408040;
+                        <a href="/#/showOfferings" style="width: 100%; height: 100%">
+                            <button style=" background-color: #408040;
                 border-color: #499349; font-size: larger" class="col-xs-4 btn-success" ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
                         app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)">
-                                Save Offering
+                                Create Offering
                             </button>
+                        </a>
                         <div class="col-xs-2"></div>
-                        <button class="col-xs-4 btn-danger" style=" background-color: #804040;
+                        <a href="/" style="width: 100%; height: 100%">
+
+                            <button class="col-xs-4 btn-danger" style=" background-color: #804040;
                 border-color: #934949; font-size: larger" class="col-xs-4 btn-success">
                                 Discard
                             </button>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -93,12 +101,12 @@
             width: 100%;
         }
 
-        .pictureuploadfieldcontainer{
+        .pictureuploadfieldcontainer {
             margin-top: 20%;
             margin-left: 20%;
             width: 180px;
             height: 180px;
-            border-radius:20px;
+            border-radius: 20px;
             border-style: dashed;
             border-color: white;
             background-color: rgba(255, 255, 255, 0.5);
