@@ -1,13 +1,21 @@
 <div ng_controller="CreateOfferingController as app">
 
     <div class="row" style="margin-top: 2%">
-        <form action="/#/showOfferings" style="width: 100%; height: 30px">
+        <form action="/#/showOfferings" style="width: 100%; height: 30px" enctype="multipart/form-data">
             <nav>
 
                 <div class="col-sm-4">
-                    <div class="pictureuploadfield" nv-file-over="" uploader="uploader">
-                        Insert your meal picture here!
+                    <div class="pictureuploadfieldcontainer" style="display:table;">
+                    <div class="pictureuploadfield" nv-file-over="" uploader="uploader" style="display:table-cell">
+                        Meal Picture
                     </div>
+                    </div>
+                    <div>
+                        <input type="file" nv-file-select="" uploader="uploader"  style="color:white; margin-top: 5%; margin-left: 20%;
+                  "/>
+                    </div>
+                    -->
+
                 </div>
                 <div class="col-sm-6">
                     <label style="font-size: x-large">Create your offer:</label>
@@ -85,14 +93,24 @@
             width: 100%;
         }
 
-        .pictureuploadfield {
-            margin-top: 15%;
+        .pictureuploadfieldcontainer{
+            margin-top: 20%;
             margin-left: 20%;
             width: 180px;
             height: 180px;
+            border-radius:20px;
             border-style: dashed;
             border-color: white;
             background-color: rgba(255, 255, 255, 0.5);
+
+        }
+
+        .pictureuploadfield {
+            text-align: center;
+            vertical-align: middle;
+            font-size: x-large;
+            color: white;
+
         }
     </style>
 </div>
