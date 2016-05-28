@@ -1,59 +1,98 @@
 <div ng_controller="CreateOfferingController as app">
 
-    <div class="row" style="margin-top: 15%">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <div class="row" style="margin-top: 1%">
-                <input type="text" ng-model="app.name" placeholder="What meal do you want to offer?"/>
-            </div>
-            <div class="row" style="margin-top: 1%; height: auto ">
-                <textarea ng-model="app.description" placeholder="Description" rows="5" style="width: 100%; height: 100%"/>
-            </div>
-            <div class="row" style="margin-top: 1%">
-                <input type="number" ng-model="app.price" placeholder="How much is it?"/>
-            </div>
-            <div class="row" style="margin-top: 1%">
-                <input type="number" ng-model="app.count" placeholder="How many meals?"/>
-            </div>
-            <div class="row" style="margin-top: 1%">
-                <input type="text" ng-model="app.address" placeholder="Where to pick up?"/>
-            </div>
+    <div class="row" style="margin-top: 2%">
+        <form action="/#/showOfferings" style="width: 100%; height: 30px">
+            <nav>
 
+                <div class="col-sm-4">
+                    <div class="pictureuploadfield" nv-file-over="" uploader="uploader">
+                        Insert your meal picture here!
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label style="font-size: x-large">Create your offer:</label>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="nameInput" class="col-xs-4">Meal Name:</label>
+                        <input class="col-xs-8" type="text" ng-model="app.name" id="nameInput"/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="priceInput" class="col-xs-4">Price:</label>
+                        <input type="number" ng-model="app.price" class="col-xs-2" id="priceInput"/>
+                    </div>
+                    <div class="row" style="margin-top: 1%; height: auto ">
+                        <label for="descriptionInput" class="col-xs-4">Description:</label>
+                        <textarea ng-model="app.description" class="col-xs-8" id="descriptionInput" rows="5"/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="countInput" class="col-xs-4">Ammount:</label>
+                        <input type="number" ng-model="app.count" id="countInput" class="col-xs-2"/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="addressInput" class="col-xs-4">Address:</label>
+                        <input type="text" ng-model="app.address" id="addressInput" class="col-xs-8"/>
+                    </div>
 
-            <div class="row">
-                <input type="checkbox" ng-model="app.onSite" >
-            </div>
-            <div class="row">
-                <input type="checkbox" ng-model="app.takeAway"/>
-            </div>
+                    <label style="margin-top: 2%">This meal is for:</label>
+                    <div>
+                        <label class="checkbox-inline"><input type="checkbox" ng-model="app.onSite">On Site</label>
+                        <label class="checkbox-inline"><input type="checkbox" ng-model="app.takeAway">Take Away</label>
+                    </div>
+                    <label style="margin-top: 2%">All used food is:</label>
+                    <div>
+                        <label class="checkbox-inline"><input type="checkbox"
+                                                              ng-model="app.vegetarian">Vegetarian</label>
+                        <label class="checkbox-inline"><input type="checkbox" ng-model="app.vegan">Vegan</label>
+                        <label class="checkbox-inline"><input type="checkbox"
+                                                              ng-model="app.glutenfree">Glutenfree</label>
+                        <label class="checkbox-inline"><input type="checkbox"
+                                                              ng-model="app.lactosefree">Lactosefree</label>
+                    </div>
 
-            <div class="row" style="margin-top: 1%">
-                <nav>
-                    <form action="/#/showOfferings" style="width: 100%; height: 30px">
-                        <button ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
-                        app.onSite, app.takeAway)"
-                                style="width: 100%; height: 100%">
-                            Save Offering
-                        </button>
-                    </form>
-                </nav>
-            </div>
-        </div>
-        <div class="col-sm-4"></div>
+                    <div class="row" style="margin-top: 5%">
+                        <div class="col-xs-1"></div>
+                        <button  style=" background-color: #408040;
+                border-color: #499349; font-size: larger" class="col-xs-4 btn-success" ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
+                        app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)">
+                                Save Offering
+                            </button>
+                        <div class="col-xs-2"></div>
+                        <button class="col-xs-4 btn-danger" style=" background-color: #804040;
+                border-color: #934949; font-size: larger" class="col-xs-4 btn-success">
+                                Discard
+                            </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="col-sm-2"></div>
+        </form>
+
     </div>
 
 
+    <style>
 
-<style>
-
-    div .row {
+        div .row {
             height: 30px;
             width: 100%;
+        }
+
+        div label {
+            color: white;
         }
 
         input {
             height: 100%;
             width: 100%;
+        }
+
+        .pictureuploadfield {
+            margin-top: 15%;
+            margin-left: 20%;
+            width: 180px;
+            height: 180px;
+            border-style: dashed;
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </div>

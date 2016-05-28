@@ -9,7 +9,7 @@ mealtime.controller("CreateOfferingController", function ($http) {
     var url = window.location.href;
 
     // Catching post request
-    app.saveOffering = function (name, price, count, description, address, onSite, takeAway) {
+    app.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
         $http.post("http://localhost:3000/api/meals",
             {
                 name: name,
@@ -19,10 +19,10 @@ mealtime.controller("CreateOfferingController", function ($http) {
                 address: address,
                 onSite: onSite,
                 takeAway: takeAway,
-                vegetarian: true,
-                vegan: true,
-                glutenfree:true,
-                lactosefree: false
+                vegetarian: vegetarian,
+                vegan: vegan,
+                glutenfree:glutenfree,
+                lactosefree: lactosefree
             })
 
     };
