@@ -24,11 +24,11 @@
                     <label style="font-size: x-large">Create your offer:</label>
                     <div class="row" style="margin-top: 1%">
                         <label for="nameInput" class="col-xs-4">Meal Name:</label>
-                        <input class="col-xs-8" type="text" ng-model="app.name" id="nameInput"/>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="app.name" id="nameInput" required/>
                     </div>
                     <div class="row" style="margin-top: 1%">
                         <label for="priceInput" class="col-xs-4">Price:</label>
-                        <input type="number" ng-model="app.price" class="col-xs-2" id="priceInput"/>
+                        <input type="number" ng-model="app.price" class="col-xs-2" id="priceInput" required/>
                     </div>
                     <div class="row" style="margin-top: 1%; height: auto ">
                         <label for="descriptionInput" class="col-xs-4">Description:</label>

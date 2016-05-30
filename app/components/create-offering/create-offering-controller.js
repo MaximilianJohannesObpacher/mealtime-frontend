@@ -24,7 +24,7 @@ myApp.directive('fileModel', ['$parse', function ($parse) {
 myApp.service('fileUpload', ['$http', function ($http) {
     this.uploadFileToUrl = function(file, uploadUrl){
         var fd = new FormData();
-        fd.append('file', file);
+        fd.append('picture', file);
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
@@ -47,6 +47,39 @@ myApp.controller('CreateOfferingController', ['$scope','$http', 'fileUpload', fu
     };
 
     this.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
+
+        if(name==undefined){
+            name = "No name given!";
+        }
+        if(price==undefined){
+            price = 0;
+        }
+        if(description==undefined){
+            description = "No Description";
+        }
+        if(count==undefined){
+            count = 1;
+        }
+        if(takeAway==undefined){
+            takeAway = false;
+        }
+        if(onSite==undefined){
+            onSite = false;
+        }
+        if(vegetarian==undefined){
+            vegetarian = false;
+        }
+        if(vegan==undefined){
+            vegan = false;
+        }
+        if(glutenfree==undefined){
+            glutenfree = false;
+        }
+        if(lactosefree==undefined){
+            lactosefree = false;
+        }
+
+
         $http.post("http://localhost:3000/api/meals",
             {
                 name: name,

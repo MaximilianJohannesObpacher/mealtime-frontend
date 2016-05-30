@@ -1,15 +1,100 @@
 <div ng_controller="ShowOfferingsController as resCon">
 
-    <ul>
-        <li ng-repeat="offering in resCon.offerings">
-             {{ offering.price }}
-        </li>
-    </ul>
 
-    <nav>
-        <form action="/">
-            <button>Back Home</button>
-        </form>
-    </nav>
+    <div style="width:100%; height:40px; background:darkgray; margin-top:20px; color:white;
+    vertical-align: middle; line-height: 40px">
+    </div>
+
+    <div style="width:100%; height:10px; background:#408040;"></div>
+
+    <div style="background: white; height:100%">
+
+        <div class="filterheader" style="padding-top:1%; width:50%; margin-left: 30%; display:flex">
+
+            <div class="form-group" style="line-height: 40px; vertical-align: middle; width: 40%;
+                              border-style: solid; border-width: 2px; border-radius:5px;
+                              border-color:darkgray; color:darkgray; padding-left: 2%">Angebote in 80333 München
+            </div>
+
+            <div class="form-group" style="margin-left: 42%; width:18%">
+                <select class="form-control" id="filters" style="border-color:darkgray; color:darkgray">
+                    <option value="Preis">Preis</option>
+                    <option value="Entfernung">Entfernung</option>
+                    <option value="Uhrzeit">Uhrzeit</option>
+                    <option value="Bewertung">Bewertung</option>
+                </select>
+            </div>
+        </div>
+
+        <ul style="list-style: none; padding-left: 30%; padding-right:20%">
+            <li ng-repeat="offering in resCon.offerings">
+                <div style="height:110px; width:100%; border-radius: 20px;
+                  border-style: solid;
+                  border-color: #408040;
+                  border-width: 2px;
+                  margin-top:1%;
+                  position: relative;">
+
+                    <img src="/assets/img/food-715542_1920.jpg"
+                         style="
+                 margin-top: 15px;
+                 margin-left: 15px;
+                 width: 80px;
+                 height: 80px;
+                 border-radius: 60px;"/>
+
+                    <div style="display:flex; position:absolute; top:10%; width:100%">
+                        <span style="margin-left: 15%; width:35%; font-size:x-large; color: dimgray; white-space: nowrap">{{offering.name}}
+                        </span>
+                        <div style="margin-left: 37%; color:dimgray; font-size:x-large">{{offering.price}} €</div>
+                    </div>
+
+                    <div style="display:flex; vertical-align: middle; position:absolute; top:30%; width:100%; margin-top: 1%">
+                        <div style="margin-left: 15%; width:10%; font-size:medium; color: dimgray; line-height: 35px">by
+                            Bronko
+                        </div>
+                        <div style="margin-left: 3%; font-size: x-large; margin-bottom: 2px">
+                            &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
+                        </div>
+                    </div>
+                    <div style="display:flex; vertical-align: middle; position:absolute; top:65%; width:100%;">
+
+                        <div style="margin-left: 73%; font-size: x-large; margin-bottom: 2px">
+                            <a href="/" style="width: 200px; height: 100%">
+                                <button style=" background-color: #408040; width: 100%; height: 100%;
+                                border-color: #499349; font-size: medium" class="col-xs-4 btn-success y_n"
+                                        value={{offering.takeAway}}>
+                                    Take Away!
+                                </button>
+                            </a>
+                        </div>
+                        <div style="margin-left: 2%; font-size: x-large">
+                            <a href="/" style="width: 200px; height: 100%">
+                                <button style=" background-color: #408040; width: 100%; height: 100%;
+                                border-color: #499349; font-size: medium" class="col-xs-4 btn-success y_n"
+                                        value= "{{offering.onSite}}">
+                                    Eat here!
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
 
 </div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('#table_id td.y_n').each(function(){
+            if ($(this).val() == false) {
+                $(this).css('background-color','#000');
+            }
+        });
+    });
+
+</script>
