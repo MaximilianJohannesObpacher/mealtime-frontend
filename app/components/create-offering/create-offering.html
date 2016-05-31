@@ -1,8 +1,8 @@
 <div ng_controller="CreateOfferingController as app">
 
-    <div class="row" style="margin-top: 2%">
-        <form style="width: 100%; height: 30px" enctype="multipart/form-data">
-            <nav>
+    <form style="width: 100%";>
+        <nav style="padding-top: 2%" enctype="multipart/form-data">
+            <div class="row">
                 <div class="col-sm-4">
                     <div class="pictureuploadfieldcontainer" style="display:table;">
                         <div class="pictureuploadfield" ng-model="app.picture" nv-file-over=""
@@ -78,47 +78,55 @@
                         </a>
                     </div>
                 </div>
-            </nav>
-            <div class="col-sm-2"></div>
-        </form>
+            </div>
+        </nav>
+        <div class="col-sm-2"></div>
+</form>
 
-    </div>
-
-
-    <style>
-
-        div .row {
-            height: 30px;
-            width: 100%;
-        }
-
-        div label {
-            color: white;
-        }
-
-        input {
-            height: 100%;
-            width: 100%;
-        }
-
-        .pictureuploadfieldcontainer {
-            margin-top: 20%;
-            margin-left: 20%;
-            width: 180px;
-            height: 180px;
-            border-radius: 20px;
-            border-style: dashed;
-            border-color: white;
-            background-color: rgba(255, 255, 255, 0.5);
-
-        }
-
-        .pictureuploadfield {
-            text-align: center;
-            vertical-align: middle;
-            font-size: x-large;
-            color: white;
-
-        }
-    </style>
 </div>
+
+
+<style>
+
+    div .row {
+        height: 30px;
+        width: 100%;
+    }
+
+    div label {
+        color: white;
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+    }
+
+    .pictureuploadfieldcontainer {
+        margin-top: 20%;
+        margin-left: 20%;
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
+        border-style: dashed;
+        border-color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+
+    }
+
+    .pictureuploadfield {
+        text-align: center;
+        vertical-align: middle;
+        font-size: x-large;
+        color: white;
+
+    }
+
+    body {
+        background: url('/../../../assets/img/freshfood.jpg');
+        background-repeat: no-repeat;
+    }
+</style>
+</div>
+
+
