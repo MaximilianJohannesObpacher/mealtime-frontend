@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('mealtime-frontend')
     .controller("registerController", function ($scope, currUser, $mdDialog) {
         $scope.username = '';
         $scope.pwd = '';
