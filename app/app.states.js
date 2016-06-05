@@ -36,5 +36,23 @@ angular.module('mealtime-frontend')
                 templateUrl: 'app/components/show-offerings/show-offerings.html',
                 controller: 'ShowOfferingsController',
                 controllerAs: 'ctrl'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'app/components/login/login.html',
+                controller: 'loginController',
+                controllerAs: 'ctrl'
+            })
+            .state('register', {
+                url: '/register',
+                templateUrl: 'app/components/register/register.html',
+                controller: 'registerController',
+                controllerAs: 'ctrl'
+            })
+            .state('show-profile', {
+                url: '/profile',
+                templateUrl: 'app/components/show-profile/show-profile.html',
+                controller: 'showProfileController',
+                controllerAs: 'ctrl'
             });
     }]);
