@@ -1,4 +1,131 @@
-<form name="registerForm" ng-submit="register()">
+<div ng_controller="registerController">
+
+    <form style="width: 100%";>
+        <nav style="padding-top: 2%" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="pictureuploadfieldcontainer" style="display:table;">
+                        <div class="pictureuploadfield" ng-model="registerController.picture" nv-file-over=""
+                             style="display:table-cell">
+                            Profile Picture
+                        </div>
+                    </div>
+                    <div style=" margin-left: 20%">
+                        <input type="file" file-model="myFile"
+                               style="color:white; margin-top: 5%"/>
+                        <button style="background-color: #408040;color:white;
+                border-color: #499349;margin-top: 2%" ng-click="uploadFile()">Save Profile Picture
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <label style="font-size: x-large">Create your profile:</label>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="prenameInput" class="col-xs-4">Prename:</label>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="registerController.prename" id="prenameInput" required/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="lastnameInput" class="col-xs-4">Last Name:</label>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="registerController.lastname" id="lastnameInput" required/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="emailInput" class="col-xs-4">Email:</label>
+                        <input class="col-xs-8" type="email" maxlength="30" ng-model="registerController.email" id="emailInput" required/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="birthdateInput" class="col-xs-4">Birthdate:</label>
+                        <input class="col-xs-8" type="date" id="birthdateInput" name="input" ng-model="registerController.birthdate" placeholder="yyyy-MM-dd" required />
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="addressInput" class="col-xs-4">Address:</label>
+                        <input class="col-xs-8" type="text" ng-model="registerController.address" id="addressInput" required/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="descriptionInput" class="col-xs-4">Description:</label>
+                        <textarea class="col-xs-8" ng-model="registerController.description" class="col-xs-8" id="descriptionInput" rows="5"></textarea>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="passwordInput" class="col-xs-4">Password:</label>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="registerController.password" id="passwordInput" required/>
+                    </div>
+
+
+                    <div class="row" style="margin-top: 5%">
+                        <div class="col-xs-1"></div>
+                        <a href="/#/profile" style="width: 100%; height: 100%">
+                            <button style=" background-color: #408040;
+                border-color: #499349; font-size: larger" class="col-xs-4 btn-success" ng-click="registerController.submit(registerController.prename,
+                registerController.lastname, registerController.email, registerController.birthdate, registerController.address, registerController.description, registerController.password)">
+                                Create Profile
+                            </button>
+                        </a>
+                        <div class="col-xs-2"></div>
+                        <a href="/" style="width: 100%; height: 100%">
+
+                            <button class="col-xs-4 btn-danger" style=" background-color: #804040;
+                border-color: #934949; font-size: larger" class="col-xs-4 btn-success">
+                                Cancel
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="col-sm-2"></div>
+    </form>
+
+</div>
+
+
+<style>
+
+    div .row {
+        height: 30px;
+        width: 100%;
+    }
+
+    div label {
+        color: white;
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+    }
+
+    .pictureuploadfieldcontainer {
+        margin-top: 20%;
+        margin-left: 20%;
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
+        border-style: dashed;
+        border-color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+
+    }
+
+    .pictureuploadfield {
+        text-align: center;
+        vertical-align: middle;
+        font-size: x-large;
+        color: white;
+
+    }
+
+    body {
+        background: url('/../../../assets/img/freshfood.jpg');
+        background-repeat: no-repeat;
+    }
+</style>
+</div>
+
+
+
+
+<<!-- <form name="registerForm" ng-submit="register()">
     <md-toolbar>
         <div class="md-toolbar-tools">
             <h2>Sign up</h2>
@@ -40,3 +167,4 @@
         </md-button>
     </md-dialog-actions>
 </form>
+-->>
