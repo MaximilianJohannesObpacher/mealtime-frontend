@@ -1,35 +1,85 @@
-<form name="loginForm" ng-submit="login()">
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h2>Welcome back!</h2>
-        </div>
-    </md-toolbar>
+<div ng_controller="loginController">
 
-    <md-dialog-content layout-margin>
-        <h2 class="md-title md-primary">Login</h2>
-        <span class="md-body-2 mv-error-text" ng-show="errorText">{{errorText}}</span>
-        <md-input-container class="md-block">
-            <label>Username</label>
-            <input required name="username" ng-model="username">
-            <div ng-messages="loginForm.username.$error">
-                <div ng-message="required">Username is required.</div>
-            </div>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>Password</label>
-            <input type="password" name="password" required ng-model="password">
-            <div ng-messages="loginForm.password.$error">
-                <div ng-message="required">Password is required.</div>
-            </div>
-        </md-input-container>
-    </md-dialog-content>
-    <md-dialog-actions layout="row" layout-align="space-around center">
-        <md-button ng-click="cancel()">
-            Cancel
-        </md-button>
-        <md-button type="submit" ng-disabled="loginForm.$invalid">
-            Log in
-        </md-button>
-    </md-dialog-actions>
+    <form name="loginForm" style="width: 100%";>
+        <nav style="padding-top: 2%" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label style="font-size: x-large">Login:</label>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="emailInput" class="col-xs-4">Email:</label>
+                        <input class="col-xs-8" type="email" maxlength="30" ng-model="registerController.email" id="emailInput" required/>
+                    </div>
+                    <div class="row" style="margin-top: 1%">
+                        <label for="passwordInput" class="col-xs-4">Password:</label>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="registerController.password" id="passwordInput" required/>
+                    </div>
 
-</form>
+
+                    <div class="row" style="margin-top: 5%">
+                        <div class="col-xs-1"></div>
+                        <a href="/#/profile" style="width: 100%; height: 100%">
+                            <button style=" background-color: #408040;
+                border-color: #499349; font-size: larger" class="col-xs-4 btn-success" ng-click="loginController.login(loginController.email, loginController.password)">
+                                Login
+                            </button>
+                        </a>
+                        <div class="col-xs-2"></div>
+                        <a href="/" style="width: 100%; height: 100%">
+
+                            <button class="col-xs-4 btn-danger" style=" background-color: #804040;
+                border-color: #934949; font-size: larger" class="col-xs-4 btn-success">
+                                Cancel
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="col-sm-2"></div>
+    </form>
+
+</div>
+
+
+<style>
+
+    div .row {
+        height: 30px;
+        width: 100%;
+    }
+
+    div label {
+        color: white;
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+    }
+
+    .pictureuploadfieldcontainer {
+        margin-top: 20%;
+        margin-left: 20%;
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
+        border-style: dashed;
+        border-color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+
+    }
+
+    .pictureuploadfield {
+        text-align: center;
+        vertical-align: middle;
+        font-size: x-large;
+        color: white;
+
+    }
+
+    body {
+        background: url('/../../../assets/img/freshfood.jpg');
+        background-repeat: no-repeat;
+    }
+</style>
+</div>

@@ -1,25 +1,17 @@
 angular.module('mealtime-frontend')
-    .controller("loginController", function ($scope, currUser, $mdDialog) {
-        $scope.username = '';
-        $scope.pwd = '';
-        $scope.errorText = '';
+    .controller('loginController', ['$scope','$http', function($scope, $http) {
+        this.submit = function (prename, lastname, email, birthdate, address, description, password) {
 
-        $scope.login = login;
-        $scope.cancel = cancel;
+            $http.post("http://localhost:3000/api/profiles",
+                {
+                    prename: prename,
+                    lastname: lastname,
+                    email: email,
+                    birthdate: birthdate,
+                    address: address,
+                    description: description,
+                    password: password
+                })
 
-        function login() {
-            currUser.login($scope.username, $scope.password).then(function () {
-                $mdDialog.hide();
-            }, function (response) {
-                if (response.status == 400 || response.status == 401) {
-                    $scope.errorText = "Wrong username or password.";
-                } else {
-                    $scope.errorText = "An unknown error occured. please try again later.";
-                }
-            });
-        }
-
-        function cancel() {
-            $mdDialog.cancel();
-        }
-    });
+        };
+    }]);
