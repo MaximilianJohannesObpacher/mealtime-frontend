@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="mealtime-frontend">
+
+<!-- Loading Bootsrap and fonts -->
 <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link rel="stylesheet" href="assets/css/bootstrapFlatly/bootstrap.css">
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 </head>
+
+<!-- page title for browser tab -->
 <title>Mealtime</title>
-<body background="#fff"
-      style="overflow-x: hidden">
-<div class="headerdiv" style="background: #fff">
+
+<!-- actual page pattern -->
+<body background="#fff">
+
+<!-- header -->
+<div class="headerdiv">
     <nav>
         <a href="/">
-            <img src="assets/img/mealtime_logo.png"
-                 style="width: 5%; height: 5%; margin-top:1%; margin-left: 3%; padding-bottom:1%">
+            <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
         </a>
     </nav>
-    <div style="position:absolute; top:3%; right: 3% ">
-        <a href="/#/login" style="color: #376e37; font-size: large">Login</a>
-        <a href="/#/register" style="color: #376e37; font-size: large">Register</a>
-        <a href="/#/logout" style="color: #376e37; font-size: large">Logout</a>
+    <div class="navigationDiv">
+        <a class="navigationButton" href="/#/login" >Login</a>
+        <a class="navigationButton" href="/#/register" >Register</a>
+        <a class="navigationButton" href="/#/logout" >Logout</a>
     </div>
 
-    <div style="width:100%; height:10px; background:#408040"></div>
+    <div class="borderline"></div>
 </div>
+
 <!-- dynamic content -->
 <div class="angular-container" ui-view=""></div>
-
 </body>
 
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
@@ -43,4 +49,54 @@
 <script src="/app/components/login/login-controller.js"></script>
 <script src="/app/components/register/register-controller.js"></script>
 <script src="/app/components/show-profile/show-profile-controller.js"></script>
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .headerdiv {
+        background: #fff;
+    }
+
+    .navigationButton{
+        color: #376e37;
+        font-size: large;
+    }
+
+    .borderline{
+        width:100%;
+        height:10px;
+        background:#408040;
+    }
+
+    .mealtimeLogo{
+        width: 5%;
+        height: 5%;
+        margin-top:1%;
+        margin-left: 3%;
+        padding-bottom:1%;
+    }
+
+    .navigationDiv{
+        position:absolute;
+        top:3%;
+        right: 3%;
+    }
+
+    .greenButton{
+        width:100%;
+        height:45px;
+        background-color: #408040;
+        border-color: #499349;
+        font-size: larger;
+    }
+
+    .row-margin {
+        margin-top: 1%;
+    }
+
+</style>
+
 </html>
+

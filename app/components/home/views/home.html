@@ -1,43 +1,88 @@
-
-<div class="row"
-     style="padding-top: 12%; padding-bottom: 12%; background-image: url('../../../../assets/img/freshfood.jpg');
-     background-repeat: no-repeat; background-position: right top ">
+<div class="row pageparent">
     <div class="col-sm-3">
-
     </div>
+
     <div class="col-sm-6">
-        <div style="background-color: rgba(255, 255, 255, 0.5);padding: 6%; padding-top: 2%; text-align: center">
-        <div class="row" style="color: #408040; font-size: 46px; font-family:'Oleo Script', Helvetica, sans-serif; margin-bottom: 2%;
-        ">
-             Share a meal, make a deal!
-        </div>
-
-        <div class="row">
-            <div class="col-sm-8" style="padding:0; padding-right: 1%; height:45px">
-                <input type="number" ng-model="app.postalCode" style="width:100%; height:100%; font-size: larger"
-                       placeholder="Postal Code "/>
+        <div class="formbackground">
+            <div class="row teaserText">
+                Share a meal, make a deal!
             </div>
-            <a href="/#/showOfferings" style="width: 100%; height: 100%">
-                <div class="col-sm-4" style="padding:0; height:45px">
-                    <button class="btn-success" ng-click="app.searchOfferings(app.postalCode)" style="width:100%;
-                height:100%; background-color: #408040; border-color: #499349; font-size: larger">
-                        Search Offerings
-                    </button>
+
+            <div class="row">
+                <div class="col-sm-8 searchContainer">
+                    <input class="postalCodeInput" type="number" ng-model="app.postalCode"
+                           placeholder="Postal Code "/>
                 </div>
-            </a>
-        </div>
-        <div class="row" style="margin-top: 1%; height: 45px">
-            <nav>
-                <a href="/#/createOffering" style="width: 100%; height: 100%">
-                    <button class="btn-success" style="width:100%; height:45px; background-color: #408040;
-                border-color: #499349; font-size: larger">Create Offering
-                    </button>
+
+                <a href="/#/showOfferings" class="buttonLink">
+
+                    <div class="col-sm-4 searchDiv" class=searchOfferingsDiv">
+
+                        <button class="btn-success greenButton" ng-click="app.searchOfferings(app.postalCode)">
+                            Search Offerings
+                        </button>
+                    </div>
                 </a>
-            </nav>
+            </div>
+
+            <div class="row row-margin" >
+                <nav>
+                    <a href="/#/createOffering" class="buttonLink">
+                        <button class="btn-success greenButton">Create Offering
+                        </button>
+                    </a>
+                </nav>
+            </div>
         </div>
-    </div>
     </div>
     <div class="col-sm-3">
 
     </div>
 </div>
+
+<style>
+    .pageparent {
+        padding-top: 12%;
+        padding-bottom: 12%;
+        background-image: url('../../../../assets/img/freshfood.jpg');
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+
+    .formbackground {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 6%;
+        padding-top: 2%;
+        text-align: center;
+    }
+
+    .teaserText {
+        color: #408040;
+        font-size: 46px;
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+        margin-bottom: 2%;
+    }
+
+    .searchContainer {
+        padding: 0;
+        padding-right: 1%;
+        height: 45px;
+    }
+
+    .searchDiv{
+        padding:0;
+    }
+
+    .postalCodeInput {
+        width: 100%;
+        height: 100%;
+        font-size: larger;
+    }
+
+    .buttonLink {
+        width: 100%;
+        height: 100%;
+    }
+
+</style>
