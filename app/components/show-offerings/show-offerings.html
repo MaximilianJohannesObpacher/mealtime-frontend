@@ -2,15 +2,13 @@
 
     <div style="background: white; height:100%">
 
-        <div class="filterheader" style="padding-top:1%; width:60%; margin-left: 25%; display:flex">
+        <div class="filterheader">
 
-            <div class="form-group" style="line-height: 40px; vertical-align: middle; width: 40%;
-                              border-style: solid; border-width: 2px; border-radius:5px;
-                              border-color:darkgray; color:darkgray; padding-left: 2%">Angebote in 80333 München
+            <div class="form-group locationlabel">Angebote in 80333 München
             </div>
 
-            <div class="form-group" style="margin-left: 42%; width:18%">
-                <select class="form-control" id="filters" style="border-color:darkgray; color:darkgray">
+            <div class="form-group filterdropdowncontainer">
+                <select class="form-control filterdropdown" id="filters">
                     <option value="Preis">Preis</option>
                     <option value="Entfernung">Entfernung</option>
                     <option value="Uhrzeit">Uhrzeit</option>
@@ -19,53 +17,42 @@
             </div>
         </div>
 
-        <ul style="list-style: none; padding-left: 25%; padding-right:15%">
+        <ul>
             <li ng-repeat="offering in resCon.offerings">
-                <div style="height:110px; width:100%; border-radius: 20px;
-                  border-style: solid;
-                  border-color: #408040;
-                  border-width: 2px;
-                  margin-top:1%;
-                  position: relative;">
+                <div id="offeringContainer">
 
-                    <img src="/assets/img/food-715542_1920.jpg"
-                         style="
-                 margin-top: 15px;
-                 margin-left: 15px;
-                 width: 80px;
-                 height: 80px;
-                 border-radius: 60px;"/>
+                    <img src="/assets/img/food-715542_1920.jpg" id="offeringImage"
+                    />
 
-                    <div style="display:flex; position:absolute; top:10%; width:100%">
-                        <span style="margin-left: 15%; width:35%; font-size:x-large; color: dimgray; white-space: nowrap">{{offering.name}}
+                    <div id="leftOfferingContainer">
+                        <span id="namelabel">{{offering.name}}
                         </span>
-                        <div style="margin-left: 37%; color:dimgray; font-size:x-large">{{offering.price}} €</div>
+                        <div id="pricelabel">{{offering.price}} €</div>
                     </div>
 
-                    <div style="display:flex; vertical-align: middle; position:absolute; top:30%; width:100%; margin-top: 1%">
-                        <div style="margin-left: 15%; width:10%; font-size:medium; color: dimgray; line-height: 35px">by
+                    <div id="middleOfferingContainer">
+                        <div id="cheflabel">by
                             Bronko
                         </div>
-                        <div style="margin-left: 3%; font-size: x-large; margin-bottom: 2px">
+                        <div id="stars">
                             &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
                         </div>
                     </div>
-                    <div style="display:flex; vertical-align: middle; position:absolute; top:65%; width:100%;">
+                    <div id="rightOfferingContainer">
 
-                        <div style="margin-left: 65%; font-size: x-large; margin-bottom: 2px">
-                            <a href="/" style="width: 20%; height: 100%">
-                                <button style=" background-color: #408040; width: 100%; height: 100%;
-                                border-color: #499349; font-size: medium" class="col-xs-4 btn-success y_n"
+                        <div id="buttonContainer">
+                            <a href="/" class="orderLink">
+                                <button class="col-xs-4 btn-success y_n orderButton"
                                         value={{offering.takeAway}}>
                                     Take Away!
                                 </button>
                             </a>
                         </div>
-                        <div style="margin-left: 2%; font-size: x-large">
-                            <a href="/" style="width: 20%; height: 100%">
-                                <button style=" background-color: #408040; width: 100%; height: 100%;
-                                border-color: #499349; font-size: medium" class="col-xs-4 btn-success y_n"
-                                        value= "{{offering.onSite}}">
+
+                        <div id="eatHereButtonContainer">
+                            <a href="/" class="orderLink">
+                                <button class="col-xs-4 btn-success y_n orderButton"
+                                        value="{{offering.onSite}}">
                                     Eat here!
                                 </button>
                             </a>
@@ -79,4 +66,119 @@
     </div>
 
 </div>
+
+<style>
+
+    .filterheader {
+        padding-top: 1%;
+        width: 60%;
+        margin-left: 25%;
+        display: flex;
+    }
+
+    .locationlabel {
+        line-height: 40px;
+        vertical-align: middle;
+        width: 40%;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 5px;
+        border-color: darkgray;
+        color: darkgray;
+        padding-left: 2%;
+    }
+
+    .filterdropdowncontainer {
+        margin-left: 42%;
+        width: 18%;
+    }
+
+    .filterdropdown {
+        border-color: darkgray;
+        color: darkgray;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 25%;
+        padding-right: 15%;
+    }
+
+    #offeringContainer {
+        height: 110px;
+        width: 100%;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #408040;
+        border-width: 2px;
+        margin-top: 1%;
+        position: relative;
+    }
+
+    #offeringImage {
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 80px;
+        height: 80px;
+        border-radius: 60px;
+    }
+
+    #leftOfferingContainer {
+        display: flex;
+        position: absolute;
+        top: 10%;
+        width: 100%;
+    }
+
+    #middleOfferingContainer {
+        display: flex;
+        vertical-align: middle;
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        margin-top: 1%;
+    }
+
+    #rightOfferingContainer{
+        display:flex;
+        vertical-align: middle;
+        position:absolute;
+        top:65%;
+        width:100%;
+    }
+
+    #namelabel{
+        margin-left: 15%; width:35%; font-size:x-large; color: dimgray; white-space: nowrap;
+    }
+
+    #pricelabel{
+        margin-left: 37%; color:dimgray; font-size:x-large;
+    }
+
+    #cheflabel{
+        margin-left: 15%; width:10%; font-size:medium; color: dimgray; line-height: 35px;
+    }
+
+    #stars{
+        margin-left: 3%; font-size: x-large; margin-bottom: 2px;
+    }
+
+    #buttonContainer{
+        margin-left: 65%; font-size: x-large; margin-bottom: 2px; height:32px;
+    }
+
+    .orderLink{
+        width: 20%; height: 100%
+    }
+
+    .orderButton{
+        background-color: #408040; width: 100%; height: 100%;
+        border-color: #499349; font-size: medium;
+    }
+
+    #eatHereButtonContainer{
+        margin-left: 2%; font-size: x-large; height:32px;
+    }
+
+</style>
 
