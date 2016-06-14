@@ -31,8 +31,7 @@
                     </div>
 
                     <div id="middleOfferingContainer">
-                        <div id="cheflabel">by
-                            Bronko
+                        <div id="cheflabel">by Bronko
                         </div>
                         <div id="stars">
                             &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
@@ -61,6 +60,12 @@
                     </div>
 
                 </div>
+            </li>
+        </ul>
+
+        <ul>
+            <li ng-repeat="picture in resCon.pictures">
+                <img id="ItemPreview" src="data:image/png;base64,+{{picture.img.data.data}}"/>
             </li>
         </ul>
     </div>
@@ -139,45 +144,66 @@
         margin-top: 1%;
     }
 
-    #rightOfferingContainer{
-        display:flex;
+    #rightOfferingContainer {
+        display: flex;
         vertical-align: middle;
-        position:absolute;
-        top:65%;
-        width:100%;
+        position: absolute;
+        top: 65%;
+        width: 100%;
     }
 
-    #namelabel{
-        margin-left: 15%; width:35%; font-size:x-large; color: dimgray; white-space: nowrap;
+    #namelabel {
+        margin-left: 15%;
+        width: 35%;
+        font-size: x-large;
+        color: dimgray;
+        white-space: nowrap;
     }
 
-    #pricelabel{
-        margin-left: 37%; color:dimgray; font-size:x-large;
+    #pricelabel {
+        margin-left: 37%;
+        color: dimgray;
+        font-size: x-large;
     }
 
-    #cheflabel{
-        margin-left: 15%; width:10%; font-size:medium; color: dimgray; line-height: 35px;
+    #cheflabel {
+        margin-left: 15%;
+        width: 10%;
+        font-size: medium;
+        color: dimgray;
+        line-height: 35px;
     }
 
-    #stars{
-        margin-left: 3%; font-size: x-large; margin-bottom: 2px;
+    #stars {
+        margin-left: 3%;
+        font-size: x-large;
+        margin-bottom: 2px;
     }
 
-    #buttonContainer{
-        margin-left: 65%; font-size: x-large; margin-bottom: 2px; height:32px;
+    #buttonContainer {
+        margin-left: 65%;
+        font-size: x-large;
+        margin-bottom: 2px;
+        height: 32px;
     }
 
-    .orderLink{
-        width: 20%; height: 100%
+    .orderLink {
+        width: 20%;
+        height: 100%
     }
 
-    .orderButton{
-        background-color: #408040; width: 100%; height: 100%;
-        border-color: #499349; font-size: medium;
+    .orderButton {
+        background-color: #408040;
+        width: 100%;
+        height: 100%;
+        border-color: #499349;
+        font-size: medium;
     }
 
-    #eatHereButtonContainer{
-        margin-left: 2%; font-size: x-large; height:32px;
+    #eatHereButtonContainer {
+        margin-left: 2%;
+        font-size: x-large;
+        height: 32px;
     }
 
 </style>
