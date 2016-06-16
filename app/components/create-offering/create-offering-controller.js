@@ -36,7 +36,7 @@ myApp.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-myApp.controller('CreateOfferingController', ['$scope','$http', 'fileUpload', function($scope, $http, fileUpload){
+myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', function($scope, $http, $window, fileUpload){
 
     $scope.uploadFile = function(){
         var file = $scope.myFile;
@@ -93,8 +93,9 @@ myApp.controller('CreateOfferingController', ['$scope','$http', 'fileUpload', fu
                 vegan: vegan,
                 glutenfree: glutenfree,
                 lactosefree: lactosefree
-            })
+            });
 
+        $window.location.href = '/#/showOfferings';
     };
 
 
