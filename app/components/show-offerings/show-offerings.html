@@ -19,53 +19,49 @@
 
         <ul>
             <li ng-repeat="offering in resCon.offerings">
-                <div id="offeringContainer">
+                <a href="#/meal/{{offering._id}}">
+                    <div id="offeringContainer">
 
-                    <img src="/assets/img/food-715542_1920.jpg" id="offeringImage"
-                    />
+                        <img src="/assets/img/food-715542_1920.jpg" id="offeringImage"
+                        />
 
-                    <div id="leftOfferingContainer">
+                        <div id="leftOfferingContainer">
                         <span id="namelabel">{{offering.name}}
                         </span>
-                        <div id="pricelabel">{{offering.price}} €</div>
+                            <div id="pricelabel">{{offering.price}} €</div>
+                        </div>
+
+                        <div id="middleOfferingContainer">
+                            <div id="cheflabel">by Bronko
+                            </div>
+                            <div id="stars">
+                                &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
+                            </div>
+                        </div>
+                        <div id="rightOfferingContainer">
+
+                            <div id="buttonContainer">
+                                <a href="/" class="orderLink">
+                                    <button class="col-xs-4 btn-success y_n orderButton"
+                                            value={{offering.takeAway}}>
+                                        Take Away!
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div id="eatHereButtonContainer">
+                                <a href="/" class="orderLink">
+                                    <button class="col-xs-4 btn-success y_n orderButton"
+                                            value="{{offering.onSite}}">
+                                        Eat here!
+                                    </button>
+                                </a>
+                            </div>
+
+                        </div>
+
                     </div>
-
-                    <div id="middleOfferingContainer">
-                        <div id="cheflabel">by Bronko
-                        </div>
-                        <div id="stars">
-                            &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
-                        </div>
-                    </div>
-                    <div id="rightOfferingContainer">
-
-                        <div id="buttonContainer">
-                            <a href="/" class="orderLink">
-                                <button class="col-xs-4 btn-success y_n orderButton"
-                                        value={{offering.takeAway}}>
-                                    Take Away!
-                                </button>
-                            </a>
-                        </div>
-
-                        <div id="eatHereButtonContainer">
-                            <a href="/" class="orderLink">
-                                <button class="col-xs-4 btn-success y_n orderButton"
-                                        value="{{offering.onSite}}">
-                                    Eat here!
-                                </button>
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </li>
-        </ul>
-
-        <ul>
-            <li ng-repeat="picture in resCon.pictures">
-                <img id="ItemPreview" src="data:image/png;base64,+{{picture.img.data.data}}"/>
+                </a>
             </li>
         </ul>
     </div>

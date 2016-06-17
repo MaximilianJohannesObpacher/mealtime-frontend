@@ -29,6 +29,7 @@
     "merge-stream": "^1.0.0"
   },
   "devDependencies": {
+    "angular-route": "^1.5.7",
     "gulp": "^3.9.1"
   }
 }

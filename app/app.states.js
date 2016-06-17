@@ -4,7 +4,7 @@
  * https://github.com/angular-ui/ui-router/wiki
  */
 angular.module('mealtime-frontend')
-    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider ) {
 
         // any unknown URLS go to 404
         $urlRouterProvider.otherwise('/404');
@@ -54,5 +54,10 @@ angular.module('mealtime-frontend')
                 templateUrl: 'app/components/show-profile/show-profile.html',
                 controller: 'showProfileController',
                 controllerAs: 'ctrl'
+            })
+            .state('/meal/:mealId', {
+                url: '/meal/:mealId',
+                templateUrl: 'app/components/meal-detail/meal-detail.html',
+                controller: 'MealDetailController'
             });
     }]);
