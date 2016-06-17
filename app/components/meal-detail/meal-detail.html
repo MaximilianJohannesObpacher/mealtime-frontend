@@ -1,8 +1,181 @@
 <div ng_controller="MealDetailController as mealCon">
 
-    <div>
-        Meal Name:
-        {{ mealCon.meal}}
-    </div>
+    <div id="pagecontainer" class="row">
 
+        <div id="topline">
+            <div id="toplinetext">{{mealCon.meal.name}} by Bronko</div>
+        </div>
+
+        <!-- left part of the Page with image-upload -->
+        <div class="col-sm-4">
+                <div class="pictureuploadfield">
+                </div>
+
+            <button class="btn-success orderButton">Eat here
+            </button>
+            <br>
+
+            <button class="btn-success orderButton">Take Away
+            </button>
+
+        </div>
+
+        <!-- centerpart/formpart of the page -->
+        <div class="col-sm-6 form-background">
+            <div class="oleo-green" id="nameField">{{mealCon.meal.name}}</div>
+            <div class="oleo-green" id="chefField">by Bronko</div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                <div class="col-sm-4 oleo-green mediumText smallMargin">About the Meal:</div>
+                <div class="col-sm-8 oleo-green mediumText smallMargin">{{mealCon.meal.name}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Price:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{mealCon.meal.price}}€</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Servings Available:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{mealCon.meal.count}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-12 oleo-green mediumText smallMargin">Nutritional Informarion</div>
+                    <div class="col-sm-12 smallMargin">
+                        <img class = "nutritionIcon" title="vegetarian" id ="vegetarianIcon" src="../../../assets/img/vegetarian.png">
+                        <img class = "nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
+                        <img class = "nutritionIcon" title="gluten-free" id="glutenfreeIcon" src="../../../assets/img/glutenfree.png">
+                        <img class = "nutritionIcon" title="lactose-free" id="lactosefreeIcon" src="../../../assets/img/lactosefree.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-12 oleo-green mediumText smallMargin" id="locationField">Location: {{mealCon.meal.address}}</div>
+                    <div id="googleMap"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
 </div>
+
+<style>
+    #pagecontainer {
+        position: relative;
+        background-color: #ececec;
+        padding-bottom: 20%;
+    }
+
+    #topline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: rgba(13, 13, 13, 0.75);
+    }
+
+    .pictureuploadfield {
+        margin-left: 20%;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        text-align: center;
+        vertical-align: middle;
+        width: 240px;
+        height: 240px;
+        font-size: x-large;
+        color: white;
+        background: url('/../../../assets/img/freshfood.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 20px;
+    }
+
+    #toplinetext {
+        margin-left: 8%;
+        color: white;
+        font-size: 30px;
+        line-height: 65px;
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+    }
+
+    .oleo-green{
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+        color: #408040;
+    }
+
+    #nameField{
+        margin-top: 150px;
+        font-size: 36px;
+
+    }
+
+    #chefField{
+        margin-top: 1%;
+        font-size: 20px;
+        color: black;
+    }
+
+    .mediumText{
+        color: black;
+        font-size: 20px;
+    }
+
+    .factcontainer{
+        margin-top: 3%;
+        min-height: 80px;
+    }
+    .verticalLine {
+        margin-bottom: 2%;
+        width: 100%;
+        height: 1px;
+        background: rgba(64, 128, 64, 0.75);
+    }
+
+    .smallMargin{
+        margin-top: 2%;
+    }
+
+    #locationField{
+        margin-bottom: 3%;
+    }
+
+    #googleMap{
+        width:100%;
+        height: 250px;
+    }
+
+    .nutritionIcon{
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .orderButton{
+        margin-top: 2%;
+        width: 240px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #408040;
+        margin-left: 20%;
+        border-color: #499349;
+        font-size: larger;
+    }
+
+</style>
