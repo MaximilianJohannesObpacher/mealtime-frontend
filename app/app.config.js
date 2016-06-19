@@ -6,7 +6,8 @@ angular
     
     .module('mealtime-frontend', [
         'ui.router',
-        'mealtime-frontend.homeServices'
+        'mealtime-frontend.homeServices',
+		'angularModalService'
     ])
 
     .constant('CONFIG', 

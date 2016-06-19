@@ -1,22 +1,20 @@
 <div ng_controller="MealDetailController as mealCon">
 
     <div id="pagecontainer" class="row">
-
         <div id="topline">
             <div id="toplinetext">{{mealCon.meal.name}} by Bronko</div>
         </div>
 
         <!-- left part of the Page with image-upload -->
         <div class="col-sm-4">
-                <div class="pictureuploadfield">
-                </div>
+            <div class="pictureuploadfield">
+            </div>
 
-            <button class="btn-success orderButton">Eat here
-            </button>
-            <br>
-
-            <button class="btn-success orderButton">Take Away
-            </button>
+            <a href="#/order/{{mealCon.meal._id}}">
+                <button class="btn-success orderButton">Order Meal!
+                </button>
+                <br>
+            </a>
 
         </div>
 
@@ -27,8 +25,8 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                <div class="col-sm-4 oleo-green mediumText smallMargin">About the Meal:</div>
-                <div class="col-sm-8 oleo-green mediumText smallMargin">{{mealCon.meal.name}}</div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">About the Meal:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{mealCon.meal.name}}</div>
                 </div>
             </div>
 
@@ -50,24 +48,26 @@
                 <div class="verticalLine">
                     <div class="col-sm-12 oleo-green mediumText smallMargin">Nutritional Informarion</div>
                     <div class="col-sm-12 smallMargin">
-                        <img class = "nutritionIcon" title="vegetarian" id ="vegetarianIcon" src="../../../assets/img/vegetarian.png">
-                        <img class = "nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
-                        <img class = "nutritionIcon" title="gluten-free" id="glutenfreeIcon" src="../../../assets/img/glutenfree.png">
-                        <img class = "nutritionIcon" title="lactose-free" id="lactosefreeIcon" src="../../../assets/img/lactosefree.png">
+                        <img class="nutritionIcon" title="vegetarian" id="vegetarianIcon"
+                             src="../../../assets/img/vegetarian.png">
+                        <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
+                        <img class="nutritionIcon" title="gluten-free" id="glutenfreeIcon"
+                             src="../../../assets/img/glutenfree.png">
+                        <img class="nutritionIcon" title="lactose-free" id="lactosefreeIcon"
+                             src="../../../assets/img/lactosefree.png">
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-12 oleo-green mediumText smallMargin" id="locationField">Location: {{mealCon.meal.address}}</div>
+                    <div class="col-sm-12 oleo-green mediumText smallMargin" id="locationField">Location:
+                        {{mealCon.meal.address}}
+                    </div>
                     <div id="googleMap"></div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 
@@ -113,33 +113,34 @@
         Helvetica, sans-serif;
     }
 
-    .oleo-green{
+    .oleo-green {
         font-family: 'Oleo Script',
         Helvetica, sans-serif;
         color: #408040;
     }
 
-    #nameField{
+    #nameField {
         margin-top: 150px;
         font-size: 36px;
 
     }
 
-    #chefField{
+    #chefField {
         margin-top: 1%;
         font-size: 20px;
         color: black;
     }
 
-    .mediumText{
+    .mediumText {
         color: black;
         font-size: 20px;
     }
 
-    .factcontainer{
+    .factcontainer {
         margin-top: 3%;
         min-height: 80px;
     }
+
     .verticalLine {
         margin-bottom: 2%;
         width: 100%;
@@ -147,26 +148,26 @@
         background: rgba(64, 128, 64, 0.75);
     }
 
-    .smallMargin{
+    .smallMargin {
         margin-top: 2%;
     }
 
-    #locationField{
+    #locationField {
         margin-bottom: 3%;
     }
 
-    #googleMap{
-        width:100%;
+    #googleMap {
+        width: 100%;
         height: 250px;
     }
 
-    .nutritionIcon{
+    .nutritionIcon {
         width: 40px;
         height: 40px;
         margin-right: 20px;
     }
 
-    .orderButton{
+    .orderButton {
         margin-top: 2%;
         width: 240px;
         height: 40px;

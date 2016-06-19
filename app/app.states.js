@@ -59,5 +59,10 @@ angular.module('mealtime-frontend')
                 url: '/meal/:mealId',
                 templateUrl: 'app/components/meal-detail/meal-detail.html',
                 controller: 'MealDetailController'
+            })
+            .state('/order/:mealId', {
+                url: '/order/:mealId',
+                templateUrl: 'app/components/order-meal/order-meal.html',
+                controller: 'OrderMealController'
             });
     }]);
