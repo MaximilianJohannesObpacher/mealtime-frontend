@@ -92,7 +92,9 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
                 vegetarian: vegetarian,
                 vegan: vegan,
                 glutenfree: glutenfree,
-                lactosefree: lactosefree
+                lactosefree: lactosefree,
+                chefId: "Bronko",
+                guestId: []
             });
 
         $window.location.href = '/#/showOfferings';
@@ -101,50 +103,4 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
 
 
 }]);
-
-/**mealtime.controller("CreateOfferingController", ['$scope', 'fileUpload', function($scope, fileUpload){
-    var app = this;
-    var url = window.location.href;
-
-    var uploadUrl = "http://localhost:3000/api/meals";
-
-    app.uploadFile = function(file, uploadUrl){
-
-        var fd = new FormData();
-            fd.append('file', file);
-            $http.post(uploadUrl, fd, {
-                transformRequest: angular.identity,
-                headers: {'Content-Type': undefined}
-            })
-                .success(function(){
-                })
-                .error(function(){
-                });
-        };
-
-    // Catching post request
-    app.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
-        console.log(picture);
-        var blobFile = picture;
-        var fd = new FormData;
-
-
-        $http.post("http://localhost:3000/api/meals",
-            {
-                name: name,
-                price: price,
-                count: count,
-                description: description,
-                address: address,
-                onSite: onSite,
-                takeAway: takeAway,
-                vegetarian: vegetarian,
-                vegan: vegan,
-                glutenfree: glutenfree,
-                lactosefree: lactosefree
-            })
-
-    };
-}]);**/
-
 
