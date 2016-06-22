@@ -1,33 +1,68 @@
-<div class="pagepa<rent">
+<div class="pageparent">
     <div>
         <div ng_controller="OrderMealController as app">
 
             <form>
-                <div class="row">
+                <div id="toppadding">
 
                     <!-- left part of the Page with image-upload -->
                     <div class="col-sm-5">
+                        <label class="topicLabel marginfix oleo mealtime-green">Your selection</label>
+                        <div class="oleo" id="chefField">{{ app.meal.name }}by {{app.meal.chefId}}</div>
+
+                        <div class="row factcontainer">
+                            <div class="verticalLine">
+                                <div class="col-sm-4 oleo mediumText smallMargin">Price:</div>
+                                <div class="col-sm-8 oleo mediumText smallMargin">{{app.meal.price}}€</div>
+                            </div>
+                        </div>
+
+                        <div class="row factcontainer">
+                            <div class="verticalLine">
+                                <div class="col-sm-4 oleo mediumText smallMargin">Servings Available:</div>
+                                <div class="col-sm-8 oleo mediumText smallMargin">{{app.meal.count}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row factcontainer">
+                            <div class="verticalLine">
+                                <div class="col-sm-12 oleo mediumText smallMargin">Nutritional Informarion</div>
+                                <div class="col-sm-12 smallMargin">
+                                    <img class="nutritionIcon" title="vegetarian" id="vegetarianIcon"
+                                         src="../../../assets/img/vegetarian.png">
+                                    <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
+                                    <img class="nutritionIcon" title="gluten-free" id="glutenfreeIcon"
+                                         src="../../../assets/img/glutenfree.png">
+                                    <img class="nutritionIcon" title="lactose-free" id="lactosefreeIcon"
+                                         src="../../../assets/img/lactosefree.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-margin">
+                            </div>
+
                     </div>
 
                     <!-- centerpart/formpart of the page -->
                     <div class="col-sm-5">
 
-                        <label class="topicLabel marginfix">Your message to {{app.meal.chefId}}</label>
+                        <label class="topicLabel marginfix oleo mealtime-green">Your message to {{app.meal.chefId}}</label>
 
                         <div class="row row-margin">
 
-                            <label for="titleInput" class="col-xs-4">Message Title</label>
+                            <label for="titleInput" class="col-xs-4 oleo">Message Title</label>
                             <input class="col-xs-8" type="text" maxlength="30" ng-model="app.title" id="titleInput"
                                    required/>
                         </div>
 
                         <div class="row" style="margin-top: 1%; height: auto">
-                            <label for="messageInput" class="col-xs-4">Your message:</label>
+                            <label for="messageInput" class="col-xs-4 oleo">Your message:</label>
                             <textarea ng-model="app.message" class="col-xs-8" id="messageInput" rows="5"/>
                         </div>
 
                         <div class="row row-margin">
-                            <label for="countInput" class="col-xs-4">Ammount:</label>
+                            <label for="countInput" class="col-xs-4 oleo">Ammount:</label>
                             <input type="number" ng-model="app.count" id="countInput" class="col-xs-2"/>
                         </div>
                         <div class="row">
@@ -85,14 +120,44 @@
     }
 
     .pageparent {
+        padding-left: 12%;
+        padding-top: 0;
         width: 100%;
+        height: 700px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        margin-bottom: 12%;
+        background-color: #ececec;
+        padding-bottom: 12%;
     }
 
     .marginfix {
+        padding-top: 5%;
+    }
+
+    .factcontainer {
+        margin-top: 3%;
+        min-height: 80px;
+    }
+
+    .verticalLine {
+        margin-bottom: 2%;
+        width: 100%;
+        height: 1px;
+        background: rgba(64, 128, 64, 0.75);
+    }
+    .oleo {
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+    }
+
+    .nutritionIcon {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    #toppadding {
         padding-top: 5%;
     }
 

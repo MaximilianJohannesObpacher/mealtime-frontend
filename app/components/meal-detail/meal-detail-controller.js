@@ -16,7 +16,9 @@ mealtime.controller("MealDetailController", function ($http, $scope, $stateParam
         });
     }
 
-    function initialize() {
+    /** Map excluded cause of google dependency not working
+     * 
+     * function initialize() {
         var mapProp = {
             center:new google.maps.LatLng(48.2625,11.6670),
             zoom:16,
@@ -24,7 +26,8 @@ mealtime.controller("MealDetailController", function ($http, $scope, $stateParam
         };
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
+    
+    google.maps.event.addDomListener(window, 'load', initialize); **/
 
 
 
