@@ -4,7 +4,6 @@
 
 var myApp = angular.module("mealtime-frontend");
 
-
 myApp.directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
@@ -44,6 +43,14 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
         console.dir(file);
         var uploadUrl = "http://localhost:3000/api/mealPictures";
         fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+
+    $scope.required = true;
+
+    $scope.isOptionsRequired = function(){
+        if($('#onSite:checked').length>0 || $('#takeAway:checked').length>0){
+            return true;
+        }
     };
 
     this.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {

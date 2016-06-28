@@ -2,7 +2,7 @@
     <div id="picturefilter">
     <div ng_controller="CreateOfferingController as app">
 
-        <form>
+        <form name="mealForm">
 
             <!-- Enctype multipart/form-data for uploading picture required -->
             <nav class="navigationElem" enctype="multipart/form-data">
@@ -31,12 +31,12 @@
                         <div class="row row-margin">
                             <label for="nameInput" class="col-xs-4">Meal Name:</label>
                             <input class="col-xs-8" type="text" maxlength="30" ng-model="app.name" id="nameInput"
-                                   required/>
+                                   ng-required="required"/>
                         </div>
 
                         <div class="row row-margin">
                             <label for="priceInput" class="col-xs-4">Price:</label>
-                            <input type="number" ng-model="app.price" class="col-xs-2" id="priceInput" required/>
+                            <input type="number" ng-model="app.price" class="col-xs-2" id="priceInput" ng-required="required"/>
                         </div>
 
                         <!-- had to make the style inline here, as otherwise the elements below do not detect the height
@@ -48,19 +48,21 @@
 
                         <div class="row row-margin">
                             <label for="countInput" class="col-xs-4">Ammount:</label>
-                            <input type="number" ng-model="app.count" id="countInput" class="col-xs-2"/>
+                            <input type="number" ng-model="app.count" id="countInput" min="1" max="50" class="col-xs-2" ng-required="required"/>
                         </div>
 
                         <div class="row row-margin">
                             <label for="addressInput" class="col-xs-4">Address:</label>
-                            <input type="text" ng-model="app.address" id="addressInput" class="col-xs-8"/>
+                            <input type="text" ng-model="app.address" id="addressInput" class="col-xs-8" ng-required="required"/>
                         </div>
 
                         <!-- Checkboxes -->
                         <label class="checkbox-label">This meal is for:</label>
                         <div>
-                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.onSite">On Site</label>
-                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.takeAway">Take
+                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.onSite"
+                                                                  ng-required="!isOptionsRequired()" id="onSite">On Site</label>
+                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.takeAway"
+                                                                  ng-required="!isOptionsRequired()" id="takeAway">Take
                                 Away</label>
                         </div>
                         <label class=checkbox-label>All used food is:</label>
@@ -80,7 +82,7 @@
 
 
                                 <!-- sending form to server -->
-                                <button class="col-xs-4 btn-success submitButton" ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
+                                <button class="col-xs-4 btn-success submitButton" id="saveBtn" ng-disabled="!mealForm.$valid" ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
                         app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)">
                                     Create Offering
                                 </button>
@@ -103,7 +105,6 @@
     </div>
     </div>
 </div>
-
 
 <style>
     form {
