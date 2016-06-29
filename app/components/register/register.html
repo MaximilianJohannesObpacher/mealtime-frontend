@@ -1,6 +1,6 @@
 <div ng_controller="registerController as app">
 
-    <form style="width: 100%">
+    <form name="registerForm" style="width: 100%">
         <nav style="padding-top: 2%" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-4">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row" style="margin-top: 1%">
                         <label for="passwordInput" class="col-xs-4">Repeat Password:</label>
-                        <input class="col-xs-8" type="password" maxlength="30" ng-model="app.repeatPassword"
+                        <input class="col-xs-8" type="password" maxlength="30" compare-to="app.password" ng-model="app.repeatPassword"
                                id="repeatPasswordInput" required/>
                     </div>
 
