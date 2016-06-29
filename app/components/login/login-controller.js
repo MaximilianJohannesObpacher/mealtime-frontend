@@ -1,6 +1,5 @@
 angular.module('mealtime-frontend')
-
-    .controller('loginController', ['$rootScope','$scope','$http','$window', function($rootScope, $scope, $http, $window) {
+.controller('loginController', ['$rootScope','$scope','$http','$window', 'globalService', function($rootScope, $scope, $http, $window, globalService) {
         
         this.login = function (email, password) {
             
@@ -21,6 +20,7 @@ angular.module('mealtime-frontend')
                         console.log("response status text: "+response.statusText);
                         console.log("response status: "+response.data.email);
                     $rootScope.currentUser = response.data;
+                    globalService.storeGlobal(response.data);
                     $window.location.href = '/#/profile';
                 }, 
                     //on error print error message and redirect to login
