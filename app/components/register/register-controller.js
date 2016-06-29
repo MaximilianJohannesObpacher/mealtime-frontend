@@ -1,12 +1,10 @@
 angular.module('mealtime-frontend')
 
-    .controller('registerController', ['$scope','$http', function($scope, $http) {
+    .controller('registerController', ['$rootScope','$scope','$http','$window', function($rootScope, $scope, $http, $window) {
 
-        this.sendUserToServer = function (prename, lastname, email, address, description, password) {
-            
-            console.log("Inregcon");
-            
-            $http.post("http://localhost:3000/api/profiles",
+        this.register = function (prename, lastname, email, address, description, password) {
+
+            $http.post("http://localhost:3000/api/users",
                 {
                     prename: prename,
                     lastname: lastname,
@@ -15,7 +13,12 @@ angular.module('mealtime-frontend')
                     address: address,
                     description: description,
                     password: password
-                })
+                }).then(function(response){
+                $rootScope.currentUser = response.data;
+                $window.location.href = '/#/profile';
+            }, function(response){
+                $window.location.href = '/#/register';
+            })
 
         };
     }]);
