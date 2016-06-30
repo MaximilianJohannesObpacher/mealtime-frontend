@@ -32,15 +32,24 @@
                         </div>
 
                         <div id="middleOfferingContainer">
-                            <div id="cheflabel">by {{offering.chefId}}
-                            </div>
-                            <div id="stars">
-                                &#x2605 &#x2605 &#x2605 &#x2605 &#x2605
+                            <div id="cheflabel">by {{offering.chef}}
                             </div>
                         </div>
                         <div id="rightOfferingContainer">
 
-                            <div id="buttonContainer">
+                            <div class="col-sm-12 marginLeft">
+                                <img class="nutritionIcon" title="vegetarian" id="vegetarianIcon"
+                                     src="../../../assets/img/vegetarian.png" ng-show="offering.vegetarian">
+                                <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png"
+                                     ng-show="offering.vegan">
+                                <img class="nutritionIcon" title="gluten-free" id="glutenfreeIcon"
+                                     src="../../../assets/img/glutenfree.png"
+                                     ng-show="offering.glutenfree">
+                                <img class="nutritionIcon" title="lactose-free" id="lactosefreeIcon"
+                                     src="../../../assets/img/lactosefree.png" ng-show="offering.lactosefree">
+                            </div>
+
+                            <!--<div id="buttonContainer">
                                 <a href="/" class="orderLink">
                                     <button class="col-xs-4 btn-success y_n orderButton"
                                             value={{offering.takeAway}}>
@@ -56,7 +65,7 @@
                                         Eat here!
                                     </button>
                                 </a>
-                            </div>
+                            </div> -->
 
                         </div>
 
@@ -106,7 +115,7 @@
     }
 
     #offeringContainer {
-        height: 110px;
+        height: 140px;
         width: 100%;
         border-radius: 20px;
         border-style: solid;
@@ -117,8 +126,8 @@
     }
 
     #offeringImage {
-        margin-top: 15px;
-        margin-left: 15px;
+        margin-top: 20px;
+        margin-left: 20px;
         width: 80px;
         height: 80px;
         border-radius: 60px;
@@ -144,7 +153,7 @@
         display: flex;
         vertical-align: middle;
         position: absolute;
-        top: 65%;
+        top: 55%;
         width: 100%;
     }
 
@@ -164,7 +173,7 @@
 
     #cheflabel {
         margin-left: 15%;
-        width: 10%;
+        width: 20%;
         font-size: medium;
         color: dimgray;
         line-height: 35px;
@@ -200,6 +209,10 @@
         margin-left: 2%;
         font-size: x-large;
         height: 32px;
+    }
+
+    .marginLeft{
+        margin-left: 60%;
     }
 
 </style>

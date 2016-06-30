@@ -4,7 +4,7 @@
 
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("OrderMealController", function ($scope, $stateParams, $http) {
+mealtime.controller("OrderMealController", function ($scope, $stateParams, $http, $window, globalService) {
     var app = this;
 
     // getting the meal
@@ -27,10 +27,8 @@ mealtime.controller("OrderMealController", function ($scope, $stateParams, $http
                 message: message,
                 amount: amount,
                 eatIn: eatIn,
-                chefId: app.meal.chefId
-                //guestId Todo with usermanagement
-
-
+                chefId: app.meal.chefId,
+                guestId: globalService.loadGlobal()._id
             });
 
         $window.location.href = '/';

@@ -2,7 +2,7 @@
 
     <div id="pagecontainer" class="row">
         <div id="topline">
-            <div id="toplinetext">{{mealCon.meal.name}} by Bronko</div>
+            <div id="toplinetext">{{mealCon.meal.name}} by {{mealCon.meal.chef}}</div>
         </div>
 
         <!-- left part of the Page with image-upload -->
@@ -21,7 +21,7 @@
         <!-- centerpart/formpart of the page -->
         <div class="col-sm-6 form-background">
             <div class="oleo-green" id="nameField">{{mealCon.meal.name}}</div>
-            <div class="oleo-green" id="chefField">by {{mealCon.meal.chefId}}</div>
+            <div class="oleo-green" id="chefField">by {{mealCon.meal.chef}}</div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
@@ -49,12 +49,13 @@
                     <div class="col-sm-12 oleo-green mediumText smallMargin">Nutritional Informarion</div>
                     <div class="col-sm-12 smallMargin">
                         <img class="nutritionIcon" title="vegetarian" id="vegetarianIcon"
-                             src="../../../assets/img/vegetarian.png">
-                        <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
+                             src="../../../assets/img/vegetarian.png" ng-show="mealCon.meal.vegetarian">
+                        <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png"
+                             ng-show="mealCon.meal.vegan">
                         <img class="nutritionIcon" title="gluten-free" id="glutenfreeIcon"
-                             src="../../../assets/img/glutenfree.png">
+                             src="../../../assets/img/glutenfree.png" ng-show="mealCon.meal.glutenfree">
                         <img class="nutritionIcon" title="lactose-free" id="lactosefreeIcon"
-                             src="../../../assets/img/lactosefree.png">
+                             src="../../../assets/img/lactosefree.png" ng-show="mealCon.meal.lactosefree">
                     </div>
                 </div>
             </div>
@@ -159,12 +160,6 @@
     #googleMap {
         width: 100%;
         height: 250px;
-    }
-
-    .nutritionIcon {
-        width: 40px;
-        height: 40px;
-        margin-right: 20px;
     }
 
     .orderButton {

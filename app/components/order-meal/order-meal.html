@@ -8,7 +8,7 @@
                     <!-- left part of the Page with image-upload -->
                     <div class="col-sm-5">
                         <label class="topicLabel marginfix oleo mealtime-green">Your selection</label>
-                        <div class="oleo" id="chefField">{{ app.meal.name }}by {{app.meal.chefId}}</div>
+                        <div class="oleo" id="chefField">{{ app.meal.name }} by {{app.meal.chef}}</div>
 
                         <div class="row factcontainer">
                             <div class="verticalLine">
@@ -29,12 +29,13 @@
                                 <div class="col-sm-12 oleo mediumText smallMargin">Nutritional Informarion</div>
                                 <div class="col-sm-12 smallMargin">
                                     <img class="nutritionIcon" title="vegetarian" id="vegetarianIcon"
-                                         src="../../../assets/img/vegetarian.png">
-                                    <img class="nutritionIcon" title="vegan" id="veganIcon" src="../../../assets/img/vegan.png">
+                                         src="../../../assets/img/vegetarian.png" ng-show="app.meal.vegetarian">
+                                    <img class="nutritionIcon" title="vegan" id="veganIcon"
+                                         src="../../../assets/img/vegan.png" ng-show="app.meal.vegan">
                                     <img class="nutritionIcon" title="gluten-free" id="glutenfreeIcon"
-                                         src="../../../assets/img/glutenfree.png">
+                                         src="../../../assets/img/glutenfree.png" ng-show="app.meal.glutenfree">
                                     <img class="nutritionIcon" title="lactose-free" id="lactosefreeIcon"
-                                         src="../../../assets/img/lactosefree.png">
+                                         src="../../../assets/img/lactosefree.png" ng-show="app.meal.lactosefree">
                                 </div>
                             </div>
                         </div>
@@ -47,7 +48,7 @@
                     <!-- centerpart/formpart of the page -->
                     <div class="col-sm-5">
 
-                        <label class="topicLabel marginfix oleo mealtime-green">Your message to {{app.meal.chefId}}</label>
+                        <label class="topicLabel marginfix oleo mealtime-green">Your message to {{app.meal.chef}}</label>
 
                         <div class="row row-margin">
 
