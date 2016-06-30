@@ -1,0 +1,172 @@
+<div ng_controller="showProfileController as profCon">
+
+    <div id="pagecontainer" class="row">
+        <div id="topline">
+            <div id="toplinetext">Mealtime Profile</div>
+        </div>
+
+        <!-- left part of the Page with image-upload -->
+        <div class="col-sm-4">
+            <div class="pictureuploadfield">
+            </div>
+
+            <a href="#/profile/edit/{{profCon._id}}">
+                <button class="btn-success orderButton">Edit Profile
+                </button>
+                <br>
+            </a>
+
+        </div>
+
+        <!-- centerpart/formpart of the page -->
+        <div class="col-sm-6 form-background">
+            <div class="oleo-green" id="prenameField">{{profCon.prename}}'s Profile</div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Prename:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{profCon.prename}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Lastname:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{profCon.lastname}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Email:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{profCon.email}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Address:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{profCon.address}}</div>
+                </div>
+            </div>
+
+            <div class="row factcontainer">
+                <div class="verticalLine">
+                    <div class="col-sm-4 oleo-green mediumText smallMargin">Description:</div>
+                    <div class="col-sm-8 oleo-green mediumText smallMargin">{{profCon.description}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    #pagecontainer {
+        position: relative;
+        background-color: #ececec;
+        padding-bottom: 20%;
+    }
+
+    #topline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: rgba(13, 13, 13, 0.75);
+    }
+
+    .pictureuploadfield {
+        margin-left: 20%;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        text-align: center;
+        vertical-align: middle;
+        width: 240px;
+        height: 240px;
+        font-size: x-large;
+        color: white;
+        background: url('/../../../assets/img/freshfood.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 20px;
+    }
+
+    #toplinetext {
+        margin-left: 8%;
+        color: white;
+        font-size: 30px;
+        line-height: 65px;
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+    }
+
+    .oleo {
+        font-family: 'Oleo Script',
+        Helvetica, sans-serif;
+        color: #408040;
+    }
+
+    #nameField {
+        margin-top: 150px;
+        font-size: 36px;
+
+    }
+
+    #chefField {
+        margin-top: 1%;
+        font-size: 20px;
+        color: black;
+    }
+
+    .mediumText {
+        color: black;
+        font-size: 20px;
+    }
+
+    .factcontainer {
+        margin-top: 3%;
+        min-height: 80px;
+    }
+
+    .verticalLine {
+        margin-bottom: 2%;
+        width: 100%;
+        height: 1px;
+        background: rgba(64, 128, 64, 0.75);
+    }
+
+    .smallMargin {
+        margin-top: 2%;
+    }
+
+    #locationField {
+        margin-bottom: 3%;
+    }
+
+    #googleMap {
+        width: 100%;
+        height: 250px;
+    }
+
+    .nutritionIcon {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .orderButton {
+        margin-top: 2%;
+        width: 240px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #408040;
+        margin-left: 20%;
+        border-color: #499349;
+        font-size: larger;
+    }
+
+</style>

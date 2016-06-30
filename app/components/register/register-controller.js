@@ -1,6 +1,6 @@
 angular.module('mealtime-frontend')
 
-    .controller('registerController', ['$rootScope','$scope','$http','$window', function($rootScope, $scope, $http, $window) {
+    .controller('registerController', ['$rootScope','$scope','$http','$window', 'globalService', function($rootScope, $scope, $http, $window, globalService) {
 
         this.register = function (prename, lastname, email, address, description, password) {
 
@@ -14,11 +14,10 @@ angular.module('mealtime-frontend')
                     description: description,
                     password: password
                 }).then(function(response){
-                $rootScope.currentUser = response.data;
-                $window.location.href = '/#/profile';
+                globalService.storeGlobal(response.data);
+                $window.location.href = '/#/profile/'+response.data._id;
             }, function(response){
                 $window.location.href = '/#/register';
             })
-
         };
     }]);

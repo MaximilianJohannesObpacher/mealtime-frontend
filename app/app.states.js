@@ -50,9 +50,15 @@ angular.module('mealtime-frontend')
                 controllerAs: 'ctrl'
             })
             .state('show-profile', {
-                url: '/profile',
+                url: '/profile/:profileId',
                 templateUrl: 'app/components/show-profile/show-profile.html',
                 controller: 'showProfileController',
+                controllerAs: 'ctrl'
+            })
+            .state('edit-profile', {
+                url: '/profile/edit/:profileId',
+                templateUrl: 'app/components/edit-profile/edit-profile.html',
+                controller: 'editProfileController',
                 controllerAs: 'ctrl'
             })
             .state('/meal/:mealId', {
