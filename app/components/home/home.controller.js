@@ -4,15 +4,9 @@
     angular.module('mealtime-frontend')
         .controller('homeController', homeController);
 
-    homeController.$inject = ["$scope", "$http", "$window", "$q", "asyncService"];
+    homeController.$inject = ["$scope", "$http", "$window", "$q", ];
 
-    function homeController($scope, $http, $window, $q, asyncService) {
-
-            var vm = this;
-
-            //services
-            vm.angularstrapService = asyncService;
-
-            return vm;
+    function homeController() {
+            return this;
        }
 })();

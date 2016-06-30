@@ -35,8 +35,9 @@ myApp.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', function($scope, $http, $window, fileUpload){
+myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'globalService', function($scope, $http, $window, fileUpload, globalService){
 
+    // imageupload
     $scope.uploadFile = function(){
         var file = $scope.myFile;
         console.log('file is ' );
@@ -45,27 +46,23 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
         fileUpload.uploadFileToUrl(file, uploadUrl);
     };
 
+    // Form Valiadtaion
     $scope.required = true;
 
+    // Jquery check if either onSite or Takeaway is checked for form validation
     $scope.isOptionsRequired = function(){
         if($('#onSite:checked').length>0 || $('#takeAway:checked').length>0){
             return true;
         }
     };
 
+    console.log("Current User:", globalService.loadGlobal().prename);
+
     this.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
 
-        if(name==undefined){
-            name = "No name given!";
-        }
-        if(price==undefined){
-            price = 0;
-        }
+
         if(description==undefined){
             description = "No Description";
-        }
-        if(count==undefined){
-            count = 1;
         }
         if(takeAway==undefined){
             takeAway = false;
@@ -86,21 +83,26 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
             lactosefree = false;
         }
 
+        console.log("Current User:", globalService.loadGlobal().prename);
+        console.log("Current User:", globalService.loadGlobal().address);
+        console.log("Current User:", globalService.loadGlobal().id);
+
 
         $http.post("http://localhost:3000/api/meals",
             {
                 name: name,
                 price: price,
                 count: count,
+                chef: globalService.loadGlobal().prename,
                 description: description,
-                address: address,
+                address: globalService.loadGlobal().address,
                 onSite: onSite,
                 takeAway: takeAway,
                 vegetarian: vegetarian,
                 vegan: vegan,
                 glutenfree: glutenfree,
                 lactosefree: lactosefree,
-                chefId: "Bronko",
+                chefId: globalService.loadGlobal()._id,
                 guestId: []
             });
 
