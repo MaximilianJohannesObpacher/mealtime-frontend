@@ -4,7 +4,8 @@
 
 angular
     .module('mealtime-frontend', [
-        'ui.router'
+        'ui.router',
+        'angularModalService'
     ])
 
     .constant('CONFIG',
@@ -14,13 +15,12 @@ angular
             APIHost: 'http://localhost:12017'
         })
 
-    .service('globalService', function ($rootScope) {
-
+    .service('globalService', function () {
+        
         var myObject;
-
+        
         this.storeGlobal = function (object) {
             myObject = object;
-            $rootScope.isAuthenticated = true;
             console.log("in Store service");
             return object;
         };
