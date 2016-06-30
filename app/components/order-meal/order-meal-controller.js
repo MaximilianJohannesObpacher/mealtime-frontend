@@ -18,6 +18,8 @@ mealtime.controller("OrderMealController", function ($scope, $stateParams, $http
         });
     }
 
+    $scope.required = true;
+
     this.sendOrder = function (title, message, amount, eatIn){
 
         $http.post("http://localhost:3000/api/orders",

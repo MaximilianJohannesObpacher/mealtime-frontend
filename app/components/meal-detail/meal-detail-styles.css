@@ -1,0 +1,100 @@
+#pagecontainer {
+    position: relative;
+    background-color: #ececec;
+    padding-bottom: 20%;
+}
+
+#topline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(13, 13, 13, 0.75);
+}
+
+.pictureuploadfield {
+    margin-left: 20%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+    vertical-align: middle;
+    width: 240px;
+    height: 240px;
+    font-size: x-large;
+    color: white;
+    background: url('/../../../assets/img/freshfood.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 20px;
+}
+
+#toplinetext {
+    margin-left: 8%;
+    color: white;
+    font-size: 30px;
+    line-height: 65px;
+    font-family: 'Oleo Script',
+    Helvetica, sans-serif;
+}
+
+.oleo {
+    font-family: 'Oleo Script',
+    Helvetica, sans-serif;
+    color: #408040;
+}
+
+#nameField {
+    margin-top: 150px;
+    font-size: 36px;
+
+}
+
+#chefField {
+    margin-top: 1%;
+    font-size: 20px;
+    color: black;
+}
+
+.mediumText {
+    color: black;
+    font-size: 20px;
+}
+
+.factcontainer {
+    margin-top: 3%;
+    min-height: 80px;
+}
+
+.verticalLine {
+    margin-bottom: 2%;
+    width: 100%;
+    height: 1px;
+    background: rgba(64, 128, 64, 0.75);
+}
+
+.smallMargin {
+    margin-top: 2%;
+}
+
+#locationField {
+    margin-bottom: 3%;
+}
+
+#googleMap {
+    width: 100%;
+    height: 250px;
+}
+
+.orderButton {
+    margin-top: 2%;
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #408040;
+    margin-left: 20%;
+    border-color: #499349;
+    font-size: larger;
+}

@@ -1,0 +1,76 @@
+form {
+    width: 100%;
+}
+
+div .row {
+    height: 30px;
+    width: 100%;
+}
+
+.row {
+    margin-top: 5%;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+}
+
+.pageparent {
+    padding-left: 12%;
+    padding-top: 0;
+    width: 100%;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #ececec;
+    padding-bottom: 12%;
+}
+
+.marginfix {
+    padding-top: 5%;
+}
+
+.factcontainer {
+    margin-top: 3%;
+    min-height: 80px;
+}
+
+.verticalLine {
+    margin-bottom: 2%;
+    width: 100%;
+    height: 1px;
+    background: rgba(64, 128, 64, 0.75);
+}
+.oleo {
+    font-family: 'Oleo Script',
+    Helvetica, sans-serif;
+}
+
+.nutritionIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+#toppadding {
+    padding-top: 5%;
+}
+
+.finalOrderButton{
+    height: 100%;
+    font-size: larger;
+    color: #fff;
+    background-color: #408040;
+    border-color: #499349;
+
+}
+
+#eatHereButton{
+    width:100%;
+}
+
+#takeAwayButton{
+    width:100%;
+}

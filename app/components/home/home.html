@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="app/components/home/home-styles.css">
+
 <div class="row pageparent" ng_controller="homeController as app">
     <div class="col-sm-3">
     </div>
@@ -21,7 +23,7 @@
 
                     <div class="col-sm-4 searchDiv" class=searchOfferingsDiv">
 
-                        <button class="btn-success greenButton" ng-click="app.searchOfferings(app.postalCode)">
+                        <button class="greenButton" ng-click="app.searchOfferings(app.postalCode)">
                             Search Offerings
                         </button>
                     </div>
@@ -31,7 +33,7 @@
             <div class="row row-margin">
                 <nav>
                     <a class="buttonLink">
-                        <button class="btn-success greenButton" ng-click="checkIfLoggedIn()" id="createOfferingBtn">Create Offering
+                        <button class="greenButton" ng-click="checkIfLoggedIn()" id="createOfferingBtn">Create Offering
                         </button>
                     </a>
                 </nav>
@@ -138,147 +140,3 @@
 
 </div>
 
-<style>
-    .pageparent {
-        padding-top: 6%;
-        padding-bottom: 15%;
-        background-image: url('../../../assets/img/freshfood.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position:relative;
-    }
-
-    .formbackground {
-        background-color: rgba(255, 255, 255, 0.5);
-        padding-top: 1%;
-        padding-left: 2.5%;
-        padding-right: 2.5%;
-        padding-bottom: 1%;
-    }
-
-    #sloganbackground {
-        text-align: center;
-        margin-bottom: 4%;
-    }
-
-    .teaserText span {
-        color: #fff;
-        font-size: 46px;
-        font-family: 'Oleo Script',
-        Helvetica, sans-serif;
-        background-color: #408040;
-        padding: 1%;
-        padding-top: 0;
-        padding-bottom: 0;
-        border-radius: 2px;
-    }
-
-    .searchContainer {
-        padding: 0;
-        padding-right: 1%;
-        height: 45px;
-    }
-
-    .searchDiv {
-        padding: 0;
-    }
-
-    .postalCodeInput {
-        width: 100%;
-        height: 100%;
-        font-size: larger;
-    }
-
-    .buttonLink {
-        width: 100%;
-        height: 100%;
-    }
-
-    #bottomfilter{
-        position:absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 18%;
-        background-color: rgba(13,13,13, 0.75);
-    }
-
-    #bottomline{
-        width:100%;
-        height: 10px;
-        background-color: #408040;
-    }
-
-    #explanationsection{
-        width: 100%;
-        height: 1400px;
-        background-color: #ececec;
-    }
-
-    #tutorialheader{
-        margin-top: 5%;;
-        color: #408040;
-        font-size: 80px;
-        font-family: 'Oleo Script',
-        Helvetica, sans-serif;
-        text-align: center;
-    }
-
-    .explanationcircle{
-        width: 240px;
-        height: 240px;
-        border-radius: 120px;
-        background-color: #fff;
-        margin: 3%  auto;
-        position: relative;
-    }
-
-    .tutorialheading{
-        margin-top: 50px;
-        color: #408040;
-        font-size: 50px;
-        font-family: 'Oleo Script',
-        Helvetica, sans-serif;
-        text-align: center;
-    }
-
-    .tutorialsubtitle{
-        font-size: 24px;
-        color: black;
-        margin-top: 0;
-        margin-bottom: 30px;
-    }
-
-    .stepnumber{
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        background-color: #408040;
-        text-align: center;
-        font-size: 30px;
-        font-style: oblique;
-        line-height: 40px;
-        color: #fff;
-        position:absolute;
-        top: 30px;
-        left: 10px;
-    }
-
-    .tutorialicon{
-        width: 100px;
-        height: 100px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position:absolute;
-        top: 70px;
-        left: 70px;
-    }
-
-    #createOfferingBtn{
-        margin-left: 16px;
-        width: 95%;
-    }
-
-</style>
