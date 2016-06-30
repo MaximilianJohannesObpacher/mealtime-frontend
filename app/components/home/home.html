@@ -1,4 +1,4 @@
-<div class="row pageparent">
+<div class="row pageparent" ng_controller="homeController as app">
     <div class="col-sm-3">
     </div>
 
@@ -30,8 +30,8 @@
 
             <div class="row row-margin">
                 <nav>
-                    <a href="/#/createOffering" class="buttonLink">
-                        <button class="btn-success greenButton" id="createOfferingBtn">Create Offering
+                    <a class="buttonLink">
+                        <button class="btn-success greenButton" ng-click="checkIfLoggedIn()" id="createOfferingBtn">Create Offering
                         </button>
                     </a>
                 </nav>
@@ -67,7 +67,7 @@
                     <div class="stepnumber">
                         1
                     </div>
-                    <img src="../../../../assets/img/hungry.jpg" class="tutorialicon">
+                    <img src="../../../assets/img/hungry.jpg" class="tutorialicon">
                 </div>
                 <div class="tutorialheading tutorialsubtitle"><span>Hungry?
                 </span>
@@ -77,7 +77,7 @@
                     <div class="stepnumber">
                         2
                     </div>
-                    <img src="../../../../assets/img/mealtime_logo.png" class="tutorialicon">
+                    <img src="../../../assets/img/mealtime_logo.png" class="tutorialicon">
                 </div>
 
                 <div class="tutorialheading tutorialsubtitle"><span>Search Mealtime offerings!
@@ -88,7 +88,7 @@
                     <div class="stepnumber">
                         3
                     </div>
-                    <img src="../../../../assets/img/eating.png" class="tutorialicon">
+                    <img src="../../../assets/img/eating.png" class="tutorialicon">
                 </div>
                 <div class="tutorialheading tutorialsubtitle"><span>Have a delicious meal!
                 </span>
@@ -103,7 +103,7 @@
                     <div class="stepnumber">
                         1
                     </div>
-                    <img src="../../../../assets/img/chef.png" class="tutorialicon">
+                    <img src="../../../assets/img/chef.png" class="tutorialicon">
                 </div>
                 <div class="tutorialheading tutorialsubtitle"><span>Cook a tasty meal!
                 </span>
@@ -113,7 +113,7 @@
                     <div class="stepnumber">
                         2
                     </div>
-                    <img src="../../../../assets/img/mealtime_logo.png" class="tutorialicon">
+                    <img src="../../../assets/img/mealtime_logo.png" class="tutorialicon">
                 </div>
                 <div class="tutorialheading tutorialsubtitle"><span>Create an Mealtime offering!
                 </span>
@@ -123,7 +123,7 @@
                     <div class="stepnumber">
                         3
                     </div>
-                    <img src="../../../../assets/img/money.jpg" class="tutorialicon">
+                    <img src="../../../assets/img/money.jpg" class="tutorialicon">
                 </div>
                 <div class="tutorialheading tutorialsubtitle"><span>Earn money!
                 </span>
@@ -142,7 +142,7 @@
     .pageparent {
         padding-top: 6%;
         padding-bottom: 15%;
-        background-image: url('../../../../assets/img/freshfood.jpg');
+        background-image: url('../../../assets/img/freshfood.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;

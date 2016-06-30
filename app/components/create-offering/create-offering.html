@@ -51,11 +51,6 @@
                             <input type="number" ng-model="app.count" id="countInput" min="1" max="50" class="col-xs-2" ng-required="required"/>
                         </div>
 
-                        <div class="row row-margin">
-                            <label for="addressInput" class="col-xs-4">Address:</label>
-                            <input type="text" ng-model="app.address" id="addressInput" class="col-xs-8" ng-required="required"/>
-                        </div>
-
                         <!-- Checkboxes -->
                         <label class="checkbox-label">This meal is for:</label>
                         <div>
@@ -82,7 +77,7 @@
 
 
                                 <!-- sending form to server -->
-                                <button class="col-xs-4 btn-success submitButton" id="saveBtn" ng-disabled="!mealForm.$valid" ng-click="app.saveOffering(app.name, app.price, app.count, app.description, app.address,
+                                <button class="col-xs-4 btn-success submitButton" id="saveBtn" ng-disabled="!mealForm.$valid" ng-click="app.saveOffering(app.name, app.price, app.count, app.description,
                         app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)">
                                     Create Offering
                                 </button>

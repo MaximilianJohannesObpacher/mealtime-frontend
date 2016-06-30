@@ -58,7 +58,7 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
 
     console.log("Current User:", globalService.loadGlobal().prename);
 
-    this.saveOffering = function (name, price, count, description, address, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
+    this.saveOffering = function (name, price, count, description, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
 
 
         if(description==undefined){

@@ -15,7 +15,7 @@ angular.module('mealtime-frontend')
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'app/components/home/views/home.html',
+                templateUrl: 'app/components/home/home.html',
                 controller: "homeController",
                 controllerAs: 'ctrl'
             })

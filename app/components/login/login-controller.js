@@ -1,6 +1,8 @@
 angular.module('mealtime-frontend')
 .controller('loginController', ['$rootScope','$scope','$http','$window', 'globalService', function($rootScope, $scope, $http, $window, globalService) {
-        
+
+        ngToast.create("Please Login to proceed!");
+
         this.login = function (email, password) {
             
             console.log("email: " + email + " and password: " + password);
