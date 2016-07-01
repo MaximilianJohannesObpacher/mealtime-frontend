@@ -4,7 +4,7 @@
  * https://github.com/angular-ui/ui-router/wiki
  */
 angular.module('mealtime-frontend')
-    .config(['$stateProvider', '$urlRouterProvider' , function ($stateProvider, $urlRouterProvider ) {
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
         // any unknown URLS go to 404
         $urlRouterProvider.otherwise('/404');
@@ -24,35 +24,39 @@ angular.module('mealtime-frontend')
             .state('createOffering', {
                 // we'll add another state soon
                 url: '/createOffering',
-                templateUrl: 'app/components/create-offering/create-offering.html',
+                templateUrl: 'app/components/create-offering/create-offering.html'
             })
             .state('showOfferings', {
                 // we'll add another state soon
                 url: '/showOfferings',
-                templateUrl: 'app/components/show-offerings/show-offerings.html',
+                templateUrl: 'app/components/show-offerings/show-offerings.html'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'app/components/login/login.html',
+                templateUrl: 'app/components/login/login.html'
             })
             .state('register', {
                 url: '/register',
-                templateUrl: 'app/components/register/register.html',
+                templateUrl: 'app/components/register/register.html'
             })
             .state('show-profile', {
                 url: '/profile/:profileId',
-                templateUrl: 'app/components/show-profile/show-profile.html',
+                templateUrl: 'app/components/show-profile/show-profile.html'
             })
             .state('edit-profile', {
                 url: '/profile/edit/:profileId',
-                templateUrl: 'app/components/edit-profile/edit-profile.html',
+                templateUrl: 'app/components/edit-profile/edit-profile.html'
             })
             .state('/meal/:mealId', {
                 url: '/meal/:mealId',
-                templateUrl: 'app/components/meal-detail/meal-detail.html',
+                templateUrl: 'app/components/meal-detail/meal-detail.html'
             })
             .state('/order/:mealId', {
                 url: '/order/:mealId',
-                templateUrl: 'app/components/order-meal/order-meal.html',
+                templateUrl: 'app/components/order-meal/order-meal.html'
+            })
+            .state('orders', {
+                url: '/profile/orders/:profileId',
+                templateUrl: 'app/components/profile-orders/profile-orders.html'
             });
     }]);

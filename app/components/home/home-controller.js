@@ -4,6 +4,10 @@ angular.module('mealtime-frontend')
 
         $scope.isLoggedIn = userService.loadGlobal() == null;
 
+        if(lastPage.loadGlobal()=="login"){
+            console.log("In login: ", lastPage.loadGlobal());
+            this.isLoggedIn = true;
+        }
 
         console.log("first page: ", lastPage.loadGlobal());
         if(lastPage.loadGlobal() == "ordermeal"){

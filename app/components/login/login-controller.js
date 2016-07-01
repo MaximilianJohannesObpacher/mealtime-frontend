@@ -24,8 +24,8 @@ angular.module('mealtime-frontend')
                         userService.storeGlobal(response.data);
 
                         if (lastPage.loadGlobal() == "home") {
-                            lastPage.storeGlobal("");
-                            $window.location.href = '/';
+                            lastPage.storeGlobal("login");
+                            $window.location.href = '/#/';
                         }
                         else if (lastPage.loadGlobal() == "createoffering") {
                             lastPage.storeGlobal("");
