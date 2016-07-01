@@ -1,107 +1,130 @@
 <link rel="stylesheet" href="app/components/create-offering/create-offering-styles.css">
 
+<div class="headerdiv">
+    <nav>
+        <a href="/">
+            <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
+        </a>
+    </nav>
+    <div class="navigationDiv" ng-show="!checkIfLoggedIn()">
+        <a class="navigationButton" href="/#/login">Login</a>
+        <a class="navigationButton" href="/#/register">Register</a>
+    </div>
+
+    <div class="navigationDiv" ng-show="checkIfLoggedIn()">
+        <a class="navigationButton" href="/#/profile">Profile</a>
+        <a class="navigationButton" href="/">Logout</a>
+    </div>
+
+    <div class="borderline"></div>
+</div>
+
 <div class="pageparent">
     <div id="picturefilter">
-    <div ng_controller="CreateOfferingController as app">
+        <div ng_controller="CreateOfferingController as app">
 
-        <form name="mealForm">
+            <form name="mealForm">
 
-            <!-- Enctype multipart/form-data for uploading picture required -->
-            <nav class="navigationElem" enctype="multipart/form-data">
+                <!-- Enctype multipart/form-data for uploading picture required -->
+                <nav class="navigationElem" enctype="multipart/form-data">
 
-                <div class="row">
+                    <div class="row">
 
-                    <!-- left part of the Page with image-upload -->
-                    <div class="col-sm-4">
-                        <div class="pictureuploadfieldcontainer">
-                            <div class="pictureuploadfield" ng-model="app.picture" nv-file-over="">
-                                Meal Picture
+                        <!-- left part of the Page with image-upload -->
+                        <div class="col-sm-4">
+                            <div class="pictureuploadfieldcontainer">
+                                <div class="pictureuploadfield" ng-model="app.picture" nv-file-over="">
+                                    Meal Picture
+                                </div>
+                            </div>
+
+                            <div class="fileuploadbuttoncontainer">
+                                <input class="fileuploadinput" type="file" file-model="myFile"/>
+                                <button class="fileuploadbutton" ng-click="uploadFile()">upload me
+                                </button>
                             </div>
                         </div>
 
-                        <div class="fileuploadbuttoncontainer">
-                            <input class="fileuploadinput" type="file" file-model="myFile"/>
-                            <button class="fileuploadbutton" ng-click="uploadFile()">upload me
-                            </button>
-                        </div>
-                    </div>
+                        <!-- centerpart/formpart of the page -->
+                        <div class="col-sm-6 form-background">
+                            <label class="topicLabel">Create your offer:</label>
 
-                    <!-- centerpart/formpart of the page -->
-                    <div class="col-sm-6 form-background">
-                        <label class="topicLabel">Create your offer:</label>
+                            <div class="row row-margin" ng-messages="userForm.name.$error">
+                                <label for="nameInput" class="col-xs-4">Meal Name:</label>
+                                <input class="col-xs-8" type="text" maxlength="30" ng-model="app.name" id="nameInput"
+                                       ng-required="required" placeholder="required"/>
+                            </div>
 
-                        <div class="row row-margin" ng-messages="userForm.name.$error">
-                            <label for="nameInput" class="col-xs-4">Meal Name:</label>
-                            <input class="col-xs-8" type="text" maxlength="30" ng-model="app.name" id="nameInput"
-                                   ng-required="required" placeholder="required"/>
-                        </div>
+                            <div class="row row-margin">
+                                <label for="priceInput" class="col-xs-4">Price:</label>
+                                <input type="number" ng-model="app.price" min="0" class="col-xs-2" id="priceInput"
+                                       ng-required="required" placeholder="required"/>
+                                <span class="unitSpan"> €</span>
+                            </div>
 
-                        <div class="row row-margin">
-                            <label for="priceInput" class="col-xs-4">Price:</label>
-                            <input type="number" ng-model="app.price" min="0" class="col-xs-2" id="priceInput" ng-required="required" placeholder="required"/>
-                            <span class="unitSpan"> €</span>
-                        </div>
+                            <!-- had to make the style inline here, as otherwise the elements below do not detect the height
+                            of the element correctly which destroys the design and margins. -->
+                            <div class="row" style="margin-top: 1%; height: auto">
+                                <label for="descriptionInput" class="col-xs-4">Description:</label>
+                                <textarea ng-model="app.description" class="col-xs-8" id="descriptionInput" rows="5"/>
+                            </div>
 
-                        <!-- had to make the style inline here, as otherwise the elements below do not detect the height
-                        of the element correctly which destroys the design and margins. -->
-                        <div class="row" style="margin-top: 1%; height: auto">
-                            <label for="descriptionInput" class="col-xs-4">Description:</label>
-                            <textarea ng-model="app.description" class="col-xs-8" id="descriptionInput" rows="5"/>
-                        </div>
+                            <div class="row row-margin">
+                                <label for="countInput" class="col-xs-4">Ammount:</label>
+                                <input type="number" ng-model="app.count" id="countInput" min="1" max="50"
+                                       class="col-xs-2" ng-required="required" placeholder="required"/>
+                                <span class="unitSpan"> Servings (maximum of 50)</span>
+                            </div>
 
-                        <div class="row row-margin">
-                            <label for="countInput" class="col-xs-4">Ammount:</label>
-                            <input type="number" ng-model="app.count" id="countInput" min="1" max="50" class="col-xs-2" ng-required="required" placeholder="required"/>
-                            <span class="unitSpan"> Servings (maximum of 50)</span>
-                        </div>
+                            <!-- Checkboxes -->
+                            <label class="checkbox-label">This meal is for (choose at least one option):</label>
+                            <div>
+                                <label class="checkbox-inline"><input type="checkbox" ng-model="app.onSite"
+                                                                      ng-required="!isOptionsRequired()" id="onSite">On
+                                    Site</label>
+                                <label class="checkbox-inline"><input type="checkbox" ng-model="app.takeAway"
+                                                                      ng-required="!isOptionsRequired()" id="takeAway">Take
+                                    Away</label>
+                            </div>
+                            <label class=checkbox-label>All used food is:</label>
+                            <div>
+                                <label class="checkbox-inline"><input type="checkbox"
+                                                                      ng-model="app.vegetarian">Vegetarian</label>
+                                <label class="checkbox-inline"><input type="checkbox" ng-model="app.vegan">Vegan</label>
+                                <label class="checkbox-inline"><input type="checkbox"
+                                                                      ng-model="app.glutenfree">Glutenfree</label>
+                                <label class="checkbox-inline"><input type="checkbox"
+                                                                      ng-model="app.lactosefree">Lactosefree</label>
+                            </div>
 
-                        <!-- Checkboxes -->
-                        <label class="checkbox-label">This meal is for (choose at least one option):</label>
-                        <div>
-                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.onSite"
-                                                                  ng-required="!isOptionsRequired()" id="onSite">On Site</label>
-                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.takeAway"
-                                                                  ng-required="!isOptionsRequired()" id="takeAway">Take
-                                Away</label>
-                        </div>
-                        <label class=checkbox-label>All used food is:</label>
-                        <div>
-                            <label class="checkbox-inline"><input type="checkbox"
-                                                                  ng-model="app.vegetarian">Vegetarian</label>
-                            <label class="checkbox-inline"><input type="checkbox" ng-model="app.vegan">Vegan</label>
-                            <label class="checkbox-inline"><input type="checkbox"
-                                                                  ng-model="app.glutenfree">Glutenfree</label>
-                            <label class="checkbox-inline"><input type="checkbox"
-                                                                  ng-model="app.lactosefree">Lactosefree</label>
-                        </div>
-
-                        <!-- Submit buttons -->
-                        <div class="row submitButtonsContainer">
-                            <div class="col-xs-1"></div>
+                            <!-- Submit buttons -->
+                            <div class="row submitButtonsContainer">
+                                <div class="col-xs-1"></div>
 
 
                                 <!-- sending form to server -->
                                 <button class="col-xs-4 submitButton" ng-disabled="!mealForm.$valid" ng-click="app.saveOffering(app.name, app.price, app.count, app.description,
-                        app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)" id="saveBtn">
+                        app.onSite, app.takeAway, app.vegetarian, app.vegan, app.glutenfree, app.lactosefree)"
+                                        id="saveBtn">
                                     Create Offering
                                 </button>
 
-                            <div class="col-xs-2"></div>
-                            <a class="linkstyle" href="/">
+                                <div class="col-xs-2"></div>
+                                <a class="linkstyle" href="/">
 
-                                <button class="col-xs-4 btn-danger cancelButton" class="col-xs-4 btn-success">
-                                    Discard
-                                </button>
+                                    <button class="col-xs-4 btn-danger cancelButton" class="col-xs-4 btn-success">
+                                        Discard
+                                    </button>
 
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-            <div class="col-sm-2"></div>
-        </form>
+                </nav>
+                <div class="col-sm-2"></div>
+            </form>
 
-    </div>
+        </div>
     </div>
 </div>
 

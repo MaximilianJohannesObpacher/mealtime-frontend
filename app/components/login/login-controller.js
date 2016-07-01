@@ -4,7 +4,6 @@ angular.module('mealtime-frontend')
         this.login = function (email, password) {
             
             console.log("email: " + email + " and password: " + password);
-            
             //global user variable which initially equals null (should probably not be defined here) and provides data about logged in user
             
             //sending credentials (mail + pwd) to server which checks if user exists and if password is right (so far no password check)

@@ -1,4 +1,22 @@
 <link rel="stylesheet" href="app/components/order-meal/order-meal-styles.css">
+<div class="headerdiv">
+    <nav>
+        <a href="/">
+            <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
+        </a>
+    </nav>
+    <div class="navigationDiv" ng-show="!checkIfLoggedIn()">
+        <a class="navigationButton" href="/#/login">Login</a>
+        <a class="navigationButton" href="/#/register">Register</a>
+    </div>
+
+    <div class="navigationDiv" ng-show="checkIfLoggedIn()">
+        <a class="navigationButton" href="/#/profile">Profile</a>
+        <a class="navigationButton" href="/">Logout</a>
+    </div>
+</div>
+
+<div class="borderline"></div>
 
 <div class="pageparent">
     <div>
@@ -43,43 +61,51 @@
                         </div>
 
                         <div class="row row-margin">
-                            </div>
+                        </div>
 
                     </div>
 
                     <!-- centerpart/formpart of the page -->
                     <div class="col-sm-5">
 
-                        <label class="topicLabel marginfix oleo mealtime-green">Your message to {{app.meal.chef}}</label>
+                        <label class="topicLabel marginfix oleo mealtime-green">Your message to
+                            {{app.meal.chef}}</label>
 
                         <div class="row row-margin">
 
                             <label for="titleInput" class="col-xs-4 oleo">Message Title</label>
-                            <input class="col-xs-8" type="text" maxlength="30" ng-model="app.title" id="titleInput" placeholder="required"
+                            <input class="col-xs-8" type="text" maxlength="30" ng-model="app.title" id="titleInput"
+                                   placeholder="required"
                                    ng-required="required"/>
                         </div>
 
                         <div class="row" style="margin-top: 1%; height: auto">
                             <label for="messageInput" class="col-xs-4 oleo">Your message:</label>
-                            <textarea ng-model="app.message" class="col-xs-8" id="messageInput" rows="5" ng-required placeholder="required"/>
+                            <textarea ng-model="app.message" class="col-xs-8" id="messageInput" rows="5" ng-required
+                                      placeholder="required"/>
                         </div>
 
                         <div class="row row-margin">
                             <label for="countInput" class="col-xs-4 oleo">Ammount:</label>
-                            <input type="number" ng-model="app.count" id="countInput" class="col-xs-2" placeholder="required" ng-required="required"/>
+                            <input type="number" ng-model="app.count" id="countInput" class="col-xs-2"
+                                   placeholder="required" ng-required="required"/>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                        <button class="col-xs-4 finalOrderButton" ng-disabled="!app.meal.takeAway || !orderForm.$valid" id="takeAwayButton"
-                                                value={{offering.takeAway}} ng-click="app.sendOrder(app.title, app.message, app.amount, false)">
-                                            Take Away!
-                                        </button>
+                                <button class="col-xs-4 finalOrderButton"
+                                        ng-disabled="!app.meal.takeAway || !orderForm.$valid" id="takeAwayButton"
+                                        value={{offering.takeAway}}
+                                        ng-click="app.sendOrder(app.title, app.message, app.amount, false)">
+                                    Take Away!
+                                </button>
                             </div>
                             <div class="col-sm-6">
-                                        <button class="col-xs-4 finalOrderButton" ng-disabled="!app.meal.eatIn || !orderForm.$valid" id="eatHereButton"
-                                                value="{{offering.onSite}}" ng-click="app.sendOrder(app.title, app.message, app.amount, true)">
-                                            Eat here!
-                                        </button>
+                                <button class="col-xs-4 finalOrderButton"
+                                        ng-disabled="!app.meal.eatIn || !orderForm.$valid" id="eatHereButton"
+                                        value="{{offering.onSite}}"
+                                        ng-click="app.sendOrder(app.title, app.message, app.amount, true)">
+                                    Eat here!
+                                </button>
                             </div>
                         </div>
 

@@ -3,9 +3,9 @@
  */
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("MealDetailController", function ($http, $scope, $stateParams) {
+mealtime.controller("MealDetailController", function ($http, $scope, $stateParams, globalService) {
     var app = this;
-
+    
     $scope.meal_Id = $stateParams.mealId;
 
     loadMeal();

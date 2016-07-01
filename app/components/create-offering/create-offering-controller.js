@@ -37,6 +37,17 @@ myApp.service('fileUpload', ['$http', function ($http) {
 
 myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'globalService', function($scope, $http, $window, fileUpload, globalService){
 
+    $scope.checkIfLoggedIn = function() {
+        console.log("in checkIfLoggedIn");
+        if (globalService.loadGlobal() != null) {
+            return true;
+        }
+        else {
+            $window.location.href="/#/login";
+            return false;
+        }
+    };
+
     // imageupload
     $scope.uploadFile = function(){
         var file = $scope.myFile;
@@ -55,8 +66,6 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
             return true;
         }
     };
-
-    console.log("Current User:", globalService.loadGlobal().prename);
 
     this.saveOffering = function (name, price, count, description, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
 
@@ -83,30 +92,30 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
             lactosefree = false;
         }
 
-        console.log("Current User:", globalService.loadGlobal().prename);
-        console.log("Current User:", globalService.loadGlobal().address);
-        console.log("Current User:", globalService.loadGlobal().id);
+        if(globalService.loadGlobal() != null){
+            $http.post("http://localhost:3000/api/meals",
+                {
+                    name: name,
+                    price: price,
+                    count: count,
+                    chef: globalService.loadGlobal().prename,
+                    description: description,
+                    address: globalService.loadGlobal().address,
+                    onSite: onSite,
+                    takeAway: takeAway,
+                    vegetarian: vegetarian,
+                    vegan: vegan,
+                    glutenfree: glutenfree,
+                    lactosefree: lactosefree,
+                    chefId: globalService.loadGlobal()._id,
+                    guestId: []
+                });
+
+            $window.location.href = '/#/showOfferings';
+        }
 
 
-        $http.post("http://localhost:3000/api/meals",
-            {
-                name: name,
-                price: price,
-                count: count,
-                chef: globalService.loadGlobal().prename,
-                description: description,
-                address: globalService.loadGlobal().address,
-                onSite: onSite,
-                takeAway: takeAway,
-                vegetarian: vegetarian,
-                vegan: vegan,
-                glutenfree: glutenfree,
-                lactosefree: lactosefree,
-                chefId: globalService.loadGlobal()._id,
-                guestId: []
-            });
 
-        $window.location.href = '/#/showOfferings';
     };
 
 

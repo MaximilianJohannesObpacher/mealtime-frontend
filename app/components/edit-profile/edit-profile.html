@@ -1,5 +1,24 @@
 <div ng_controller="editProfileController as editCon">
 
+    <div class="headerdiv">
+        <nav>
+            <a href="/">
+                <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
+            </a>
+        </nav>
+        <div class="navigationDiv" ng-show="checkIfLoggedIn()">
+            <a class="navigationButton" href="/#/login">Login</a>
+            <a class="navigationButton" href="/#/register">Register</a>
+        </div>
+
+        <div class="navigationDiv" ng-show="!checkIfLoggedIn()">
+            <a class="navigationButton" href="/#/profile">Profile</a>
+            <a class="navigationButton" href="/">Logout</a>
+        </div>
+
+        <div class="borderline"></div>
+    </div>
+
     <div id="pagecontainer" class="row">
         <div id="topline">
             <div id="toplinetext">Edit your Profile</div>
@@ -11,10 +30,11 @@
             </div>
 
             <!-- <a href="#/profile/{{editCon._id}}"> -->
-                <button class="btn-success orderButton" ng-click="editCon.edit(editCon.newprename,
-                editCon.newlastname, editCon.newemail, editCon.newaddress, editCon.newdescription, editCon.newpassword)">Save Changes
-                </button>
-                <br>
+            <button class="btn-success orderButton" ng-click="editCon.edit(editCon.newprename,
+                editCon.newlastname, editCon.newemail, editCon.newaddress, editCon.newdescription, editCon.newpassword)">
+                Save Changes
+            </button>
+            <br>
             <!-- </a> -->
 
         </div>
@@ -25,54 +45,66 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newprenameInput">New Prename: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newprenameInput">New Prename:
+                        (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newprename" id="newprenameInput" placeholder="{{editCon.oldprename}}"/>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newprename"
+                               id="newprenameInput" placeholder="{{editCon.oldprename}}"/>
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newlastnameInput">New Lastname: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newlastnameInput">New Lastname:
+                        (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newlastname" id="newlastnameInput" placeholder="{{editCon.oldlastname}}"/>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newlastname"
+                               id="newlastnameInput" placeholder="{{editCon.oldlastname}}"/>
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newemailInput">New Email: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newemailInput">New Email:
+                        (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <input class="col-xs-8" type="email" maxlength="30" ng-model="editCon.newemail" id="newemailInput" placeholder="{{editCon.oldemail}}"/>
+                        <input class="col-xs-8" type="email" maxlength="30" ng-model="editCon.newemail"
+                               id="newemailInput" placeholder="{{editCon.oldemail}}"/>
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newaddressInput">New Address: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newaddressInput">New Address:
+                        (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newaddress" id="newaddressInput" placeholder="{{editCon.oldaddress}}"/>
+                        <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newaddress"
+                               id="newaddressInput" placeholder="{{editCon.oldaddress}}"/>
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newdescriptionInput">New Description: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newdescriptionInput">New
+                        Description: (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <textarea class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newdescription" id="newdescriptionInput" placeholder="{{editCon.olddescription}}" rows="5"/>
+                        <textarea class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newdescription"
+                                  id="newdescriptionInput" placeholder="{{editCon.olddescription}}" rows="5"/>
                     </div>
                 </div>
             </div>
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newpasswordInput">New Password: (optional)</label></div>
+                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newpasswordInput">New Password:
+                        (optional)</label></div>
                     <div class="col-sm-8 oleo-green mediumText smallMargin">
-                        <input class="col-xs-8" type="password" maxlength="30" ng-model="editCon.newpassword" id="newpasswordInput"/>
+                        <input class="col-xs-8" type="password" maxlength="30" ng-model="editCon.newpassword"
+                               id="newpasswordInput"/>
                     </div>
                 </div>
             </div>
