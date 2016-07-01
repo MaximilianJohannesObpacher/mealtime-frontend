@@ -4,11 +4,19 @@
 
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'userService', function ($http, $scope, $window, userService) {
+mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'userService', 'lastPage', 'ngToast', function ($http, $scope, $window, userService, lastPage, ngToast) {
     var app = this;
 
 
     $scope.isLoggedIn = userService.loadGlobal() == null;
+
+    console.log("Last page: ", lastPage.loadGlobal());
+    if(lastPage.loadGlobal() == "createoffering"){
+        lastPage.storeGlobal("");
+        ngToast.create("Offering created successful!");
+    }
+
+    lastPage.storeGlobal("showofferings");
 
     loadProducts();
 

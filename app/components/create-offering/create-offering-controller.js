@@ -35,7 +35,7 @@ myApp.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'userService', function($scope, $http, $window, fileUpload, userService) {
+myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'userService', 'lastPage', function($scope, $http, $window, fileUpload, userService, lastPage) {
 
 
     if (userService.loadGlobal() != null) {
@@ -105,13 +105,14 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
                     guestId: []
                 });
 
+            lastPage.storeGlobal("createoffering");
             $window.location.href = '/#/showOfferings';
         }
-
-
+        
     };
     }
     else{
+        lastPage.storeGlobal("createoffering");
         $window.location.href = '/#/login';
     }
 

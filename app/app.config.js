@@ -30,5 +30,21 @@ angular
         };
 
         return myObject;
-    });
+    })
+
+    .service('lastPage', function () {
+
+    var mypageid;
+
+    this.storeGlobal = function (pageid) {
+        mypageid = pageid;
+        return pageid;
+    };
+
+    this.loadGlobal = function () {
+        return mypageid;
+    };
+
+    return mypageid;
+});
 

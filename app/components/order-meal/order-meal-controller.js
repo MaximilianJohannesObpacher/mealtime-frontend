@@ -4,13 +4,14 @@
 
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("OrderMealController", function ($scope, $stateParams, $http, $window, userService) {
+mealtime.controller("OrderMealController", function ($scope, $stateParams, $http, $window, userService, lastPage) {
     var app = this;
 
     if(userService.loadGlobal()!=null){
         // getting the meal
         $scope.meal_Id = $stateParams.mealId;
         $scope.isLoggedIn = userService.loadGlobal() == null;
+
 
         loadMeal();
 
@@ -35,12 +36,16 @@ mealtime.controller("OrderMealController", function ($scope, $stateParams, $http
                     guestId: userService.loadGlobal()._id
                 });
 
-            $window.location.href = '/';
+            console.log("before ordermeal ", lastPage.loadGlobal());
+            lastPage.storeGlobal("ordermeal");
+            console.log("after ordermeal ", lastPage.loadGlobal());
+            $window.location.href = '/#/';
         };
 
     }
 
     else{
+        lastPage.storeGlobal("");
         $window.location.href='/#/login';
     }
     

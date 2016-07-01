@@ -23,18 +23,16 @@
             <div class="row">
                 <div class="col-sm-8 searchContainer">
                     <input class="postalCodeInput" type="number" ng-model="app.postalCode"
-                           placeholder="Postal Code "/>
+                           placeholder="Postal Code" minlength="5" maxlength="5" min="0"/>
                 </div>
-
-                <a href="/#/showOfferings" class="buttonLink">
 
                     <div class="col-sm-4 searchDiv" class=searchOfferingsDiv">
 
                         <button class="greenButton" ng-click="app.searchOfferings(app.postalCode)">
                             Search Offerings
                         </button>
+
                     </div>
-                </a>
             </div>
 
             <div class="row row-margin">

@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <button class="col-xs-4 finalOrderButton"
-                                        ng-disabled="!app.meal.eatIn || !orderForm.$valid" id="eatHereButton"
+                                        ng-disabled="!app.meal.onSite || !orderForm.$valid" id="eatHereButton"
                                         value="{{offering.onSite}}"
                                         ng-click="app.sendOrder(app.title, app.message, app.amount, true)">
                                     Eat here!

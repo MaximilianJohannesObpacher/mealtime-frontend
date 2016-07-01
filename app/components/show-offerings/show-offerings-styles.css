@@ -130,6 +130,11 @@ ul {
     height: 32px;
 }
 
-.marginLeft{
+.marginLeft {
     margin-left: 60%;
+}
+
+#backgrounddiv {
+    background: white;
+    height: 100%;
 }
