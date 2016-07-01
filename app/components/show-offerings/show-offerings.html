@@ -1,23 +1,6 @@
 <link rel="stylesheet" href="app/components/show-offerings/show-offerings-styles.css">
 
-<div class="headerdiv"></div>
-<nav>
-    <a href="/">
-        <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
-    </a>
-</nav>
-<div class="navigationDiv" ng-show="!checkIfLoggedInBool()">
-    <a class="navigationButton" href="/#/login" >Login</a>
-    <a class="navigationButton" href="/#/register" >Register</a>
-</div>
-
-<div class="navigationDiv" ng-show="checkIfLoggedInBool()">
-    <a class="navigationButton" href="/#/profile" >Profile</a>
-    <a class="navigationButton" href="/" >Logout</a>
-</div>
-
-<div class="borderline"></div>
-</div>
+<div ng-include src="'app/components/header/header2.html'"></div>
 
 <div ng_controller="ShowOfferingsController as resCon">
 

@@ -1,23 +1,6 @@
 <div ng_controller="editProfileController as editCon">
 
-    <div class="headerdiv">
-        <nav>
-            <a href="/">
-                <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
-            </a>
-        </nav>
-        <div class="navigationDiv" ng-show="checkIfLoggedIn()">
-            <a class="navigationButton" href="/#/login">Login</a>
-            <a class="navigationButton" href="/#/register">Register</a>
-        </div>
-
-        <div class="navigationDiv" ng-show="!checkIfLoggedIn()">
-            <a class="navigationButton" href="/#/profile">Profile</a>
-            <a class="navigationButton" href="/">Logout</a>
-        </div>
-
-        <div class="borderline"></div>
-    </div>
+    <div ng-include src="'app/components/header/header.html'"></div>
 
     <div id="pagecontainer" class="row">
         <div id="topline">
