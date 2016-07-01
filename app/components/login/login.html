@@ -1,24 +1,6 @@
 <div ng_controller="loginController as app">
 
-    <div class="headerdiv">
-        <nav>
-            <a href="/">
-                <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
-            </a>
-        </nav>
-        <div class="navigationDiv" ng-show="!checkIfLoggedIn()">
-            <a class="navigationButton" href="/#/login">Login</a>
-            <a class="navigationButton" href="/#/register">Register</a>
-        </div>
-
-        <div class="navigationDiv" ng-show="checkIfLoggedIn()">
-            <a class="navigationButton" href="/#/profile">Profile</a>
-            <a class="navigationButton" href="/">Logout</a>
-        </div>
-
-        <div class="borderline"></div>
-    </div>
-
+    <div ng-include src="'app/components/header/header.html'"></div>
 
     <form name="loginForm" style="width: 100%">
         <nav style="padding-top: 2%" enctype="multipart/form-data">

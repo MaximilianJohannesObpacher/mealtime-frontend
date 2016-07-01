@@ -30,41 +30,29 @@ angular.module('mealtime-frontend')
                 // we'll add another state soon
                 url: '/showOfferings',
                 templateUrl: 'app/components/show-offerings/show-offerings.html',
-                controller: 'ShowOfferingsController',
-                controllerAs: 'ctrl'
             })
             .state('login', {
                 url: '/login',
                 templateUrl: 'app/components/login/login.html',
-                controller: 'loginController',
-                controllerAs: 'ctrl'
             })
             .state('register', {
                 url: '/register',
                 templateUrl: 'app/components/register/register.html',
-                controller: 'registerController',
-                controllerAs: 'ctrl'
             })
             .state('show-profile', {
                 url: '/profile/:profileId',
                 templateUrl: 'app/components/show-profile/show-profile.html',
-                controller: 'showProfileController',
-                controllerAs: 'ctrl'
             })
             .state('edit-profile', {
                 url: '/profile/edit/:profileId',
                 templateUrl: 'app/components/edit-profile/edit-profile.html',
-                controller: 'editProfileController',
-                controllerAs: 'ctrl'
             })
             .state('/meal/:mealId', {
                 url: '/meal/:mealId',
                 templateUrl: 'app/components/meal-detail/meal-detail.html',
-                controller: 'MealDetailController'
             })
             .state('/order/:mealId', {
                 url: '/order/:mealId',
                 templateUrl: 'app/components/order-meal/order-meal.html',
-                controller: 'OrderMealController'
             });
     }]);

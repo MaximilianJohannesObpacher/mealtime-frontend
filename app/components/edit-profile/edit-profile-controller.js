@@ -6,6 +6,15 @@ angular.module('mealtime-frontend')
     .controller('editProfileController', ['$scope','$http','globalService', '$window', function($scope, $http, globalService, $window) {
             var app = this;
 
+        $scope.checkIfLoggedInBool = function() {
+            if (globalService.loadGlobal() != null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+
         if(globalService.loadGlobal() != null){
             var userData = globalService.loadGlobal();
             app.oldprename = userData.prename;
