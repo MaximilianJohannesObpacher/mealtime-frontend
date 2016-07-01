@@ -35,23 +35,15 @@ myApp.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'globalService', function($scope, $http, $window, fileUpload, globalService){
+myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'globalService', function($scope, $http, $window, fileUpload, globalService) {
 
-    $scope.checkIfLoggedIn = function() {
-        console.log("in checkIfLoggedIn");
-        if (globalService.loadGlobal() != null) {
-            return true;
-        }
-        else {
-            $window.location.href="/#/login";
-            return false;
-        }
-    };
 
-    // imageupload
-    $scope.uploadFile = function(){
+    if (globalService.loadGlobal() != null) {
+
+
+    $scope.uploadFile = function () {
         var file = $scope.myFile;
-        console.log('file is ' );
+        console.log('file is ');
         console.dir(file);
         var uploadUrl = "http://localhost:3000/api/mealPictures";
         fileUpload.uploadFileToUrl(file, uploadUrl);
@@ -61,8 +53,8 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
     $scope.required = true;
 
     // Jquery check if either onSite or Takeaway is checked for form validation
-    $scope.isOptionsRequired = function(){
-        if($('#onSite:checked').length>0 || $('#takeAway:checked').length>0){
+    $scope.isOptionsRequired = function () {
+        if ($('#onSite:checked').length > 0 || $('#takeAway:checked').length > 0) {
             return true;
         }
     };
@@ -70,29 +62,29 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
     this.saveOffering = function (name, price, count, description, onSite, takeAway, vegetarian, vegan, glutenfree, lactosefree) {
 
 
-        if(description==undefined){
+        if (description == undefined) {
             description = "No Description";
         }
-        if(takeAway==undefined){
+        if (takeAway == undefined) {
             takeAway = false;
         }
-        if(onSite==undefined){
+        if (onSite == undefined) {
             onSite = false;
         }
-        if(vegetarian==undefined){
+        if (vegetarian == undefined) {
             vegetarian = false;
         }
-        if(vegan==undefined){
+        if (vegan == undefined) {
             vegan = false;
         }
-        if(glutenfree==undefined){
+        if (glutenfree == undefined) {
             glutenfree = false;
         }
-        if(lactosefree==undefined){
+        if (lactosefree == undefined) {
             lactosefree = false;
         }
 
-        if(globalService.loadGlobal() != null){
+        if (globalService.loadGlobal() != null) {
             $http.post("http://localhost:3000/api/meals",
                 {
                     name: name,
@@ -115,8 +107,12 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
         }
 
 
-
     };
+    }
+    else{
+        $window.location.href = '/#/login';
+    }
+
 
 
 

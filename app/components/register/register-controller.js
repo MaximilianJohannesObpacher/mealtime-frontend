@@ -1,6 +1,15 @@
 angular.module('mealtime-frontend')
 
     .controller('registerController', ['$rootScope','$scope','$http','$window', 'globalService', function($rootScope, $scope, $http, $window, globalService) {
+
+        $scope.checkIfLoggedInBool = function() {
+            if (globalService.loadGlobal() != null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
         
         this.register = function (prename, lastname, email, address, description, password) {
 

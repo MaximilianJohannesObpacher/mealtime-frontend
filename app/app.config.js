@@ -5,7 +5,8 @@
 angular
     .module('mealtime-frontend', [
         'ui.router',
-        'angularModalService'
+        'angularModalService',
+        'ngToast'
     ])
 
     .constant('CONFIG',
@@ -21,12 +22,10 @@ angular
         
         this.storeGlobal = function (object) {
             myObject = object;
-            console.log("in Store service");
             return object;
         };
 
         this.loadGlobal = function () {
-            console.log("in Load service");
             return myObject;
         };
 

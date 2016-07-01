@@ -7,6 +7,15 @@ mealtime.controller("MealDetailController", function ($http, $scope, $stateParam
     var app = this;
     
     $scope.meal_Id = $stateParams.mealId;
+    
+    $scope.checkIfLoggedInBool = function() {
+        if (globalService.loadGlobal() != null) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
 
     loadMeal();
 

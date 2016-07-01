@@ -5,6 +5,15 @@ angular.module('mealtime-frontend')
             
             console.log("email: " + email + " and password: " + password);
             //global user variable which initially equals null (should probably not be defined here) and provides data about logged in user
+
+            $scope.checkIfLoggedInBool = function() {
+                if (globalService.loadGlobal() != null) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            };
             
             //sending credentials (mail + pwd) to server which checks if user exists and if password is right (so far no password check)
             $http.post("http://localhost:3000/api/user",

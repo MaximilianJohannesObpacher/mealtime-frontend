@@ -1,11 +1,8 @@
 
 angular.module('mealtime-frontend')
-    .controller('homeController', ['$scope', '$window', 'globalService', function($scope, $window, globalService){
-
-        console.log("in headerController");
-
+    .controller('homeController', ['$scope', '$window', 'globalService', 'ngToast', function($scope, $window, globalService, ngToast){
+        
         $scope.checkIfLoggedInBool = function() {
-            console.log("in checkIfLoggedIn");
             if (globalService.loadGlobal() != null) {
                 return true;
             }
@@ -15,7 +12,6 @@ angular.module('mealtime-frontend')
         };
 
         $scope.checkIfRedirectToLogin = function(){
-            console.log("in checkIfLoggedIn");
             if(globalService.loadGlobal() != null){
                 $window.location.href="/#/createOffering";
 

@@ -7,6 +7,16 @@ var mealtime = angular.module("mealtime-frontend");
 mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'globalService', function ($http, $scope, $window, globalService) {
     var app = this;
 
+
+    $scope.checkIfLoggedInBool = function() {
+        if (globalService.loadGlobal() != null) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    
     loadProducts();
 
     // Setting up offerings list
@@ -15,18 +25,7 @@ mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'g
             app.offerings = offerings;
         });
     }
-
-    $scope.checkIfLoggedInBool = function() {
-        console.log("in checkIfLoggedIn");
-        if (globalService.loadGlobal() != null) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-
-
+    
     /**function loadPictures() {
         $http.get("http://localhost:3000/api/mealPictures").success(function (pictures) {
             console.log(pictures);

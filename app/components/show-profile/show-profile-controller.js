@@ -5,6 +5,16 @@ angular.module('mealtime-frontend')
 
     .controller('showProfileController', ['$scope', '$http','$window', 'globalService', function ($scope, $http, $window, globalService) {
 
+
+        $scope.checkIfLoggedInBool = function() {
+            if (globalService.loadGlobal() != null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        
         if(globalService.loadGlobal() != null) {
             var userData = globalService.loadGlobal();
             var app = this;
