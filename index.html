@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/bootstrapFlatly/bootstrap.css">
     <link rel="stylesheet" href="assets/css/globalStylesheet.css">
 
-
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <!-- loading oleo sans font -->
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
@@ -23,8 +23,8 @@
 <body background="#fff">
 
 <!-- header -->
-<div class="headerdiv">
-    <nav>
+<div id="header" class="headerdiv">
+    <!-- <nav>
         <a href="/">
             <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
         </a>
@@ -36,7 +36,7 @@
             <a class="navigationButton" href="/" >Logout</a>
         </div>
 
-    <div class="borderline"></div>
+    <div class="borderline"></div> -->
 </div>
 
 <!-- dynamic content -->
@@ -56,6 +56,8 @@
 <script src="/app/app.states.js"></script>
 
 <!-- controllers -->
+<script>$("#header").load("app/components/header/header.html")</script>
+<script src="app/components/header/header-controller.js"></script>
 <script src="/app/components/home/home-controller.js"></script>
 <script src="/app/components/create-offering/create-offering-controller.js"></script>
 <script src="/app/components/show-offerings/show-offerings-controller.js"></script>
