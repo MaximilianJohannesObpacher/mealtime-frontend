@@ -3,19 +3,11 @@
  */
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("MealDetailController", function ($http, $scope, $stateParams, globalService) {
+mealtime.controller("MealDetailController", function ($http, $scope, $stateParams, userService) {
     var app = this;
     
     $scope.meal_Id = $stateParams.mealId;
-    
-    $scope.checkIfLoggedInBool = function() {
-        if (globalService.loadGlobal() != null) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
+    $scope.isLoggedIn = userService.loadGlobal() == null;
 
     loadMeal();
 

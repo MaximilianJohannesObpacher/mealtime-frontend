@@ -35,13 +35,15 @@ myApp.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'globalService', function($scope, $http, $window, fileUpload, globalService) {
+myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'fileUpload', 'userService', function($scope, $http, $window, fileUpload, userService) {
 
 
-    if (globalService.loadGlobal() != null) {
+    if (userService.loadGlobal() != null) {
+
+        $scope.isLoggedIn = userService.loadGlobal() == null;
 
 
-    $scope.uploadFile = function () {
+        $scope.uploadFile = function () {
         var file = $scope.myFile;
         console.log('file is ');
         console.dir(file);
@@ -84,22 +86,22 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
             lactosefree = false;
         }
 
-        if (globalService.loadGlobal() != null) {
+        if (userService.loadGlobal() != null) {
             $http.post("http://localhost:3000/api/meals",
                 {
                     name: name,
                     price: price,
                     count: count,
-                    chef: globalService.loadGlobal().prename,
+                    chef: userService.loadGlobal().prename,
                     description: description,
-                    address: globalService.loadGlobal().address,
+                    address: userService.loadGlobal().address,
                     onSite: onSite,
                     takeAway: takeAway,
                     vegetarian: vegetarian,
                     vegan: vegan,
                     glutenfree: glutenfree,
                     lactosefree: lactosefree,
-                    chefId: globalService.loadGlobal()._id,
+                    chefId: userService.loadGlobal()._id,
                     guestId: []
                 });
 

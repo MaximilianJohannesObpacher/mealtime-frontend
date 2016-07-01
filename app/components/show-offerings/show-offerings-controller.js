@@ -4,19 +4,12 @@
 
 var mealtime = angular.module("mealtime-frontend");
 
-mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'globalService', function ($http, $scope, $window, globalService) {
+mealtime.controller("ShowOfferingsController", ['$http', '$scope', '$window', 'userService', function ($http, $scope, $window, userService) {
     var app = this;
 
 
-    $scope.checkIfLoggedInBool = function() {
-        if (globalService.loadGlobal() != null) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-    
+    $scope.isLoggedIn = userService.loadGlobal() == null;
+
     loadProducts();
 
     // Setting up offerings list

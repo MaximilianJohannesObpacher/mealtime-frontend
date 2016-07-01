@@ -16,7 +16,7 @@ angular
             APIHost: 'http://localhost:12017'
         })
 
-    .service('globalService', function () {
+    .service('userService', function () {
         
         var myObject;
         

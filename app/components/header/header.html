@@ -4,12 +4,12 @@
             <img src="assets/img/mealtime_logo.png" class="mealtimeLogo">
         </a>
     </nav>
-    <div class="navigationDiv" ng-show="!checkIfLoggedInBool()">
+    <div class="navigationDiv" ng-show="isLoggedIn">
         <a class="navigationButton" href="/#/login" >Login</a>
         <a class="navigationButton" href="/#/register" >Register</a>
     </div>
 
-    <div class="navigationDiv" ng-show="checkIfLoggedInBool()">
+    <div class="navigationDiv" ng-show="!isLoggedIn">
         <a class="navigationButton" href="/#/profile/" >Profile</a>
         <a class="navigationButton" href="/" >Logout</a>
     </div>

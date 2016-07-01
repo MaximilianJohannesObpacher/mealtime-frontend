@@ -3,20 +3,13 @@
  */
 angular.module('mealtime-frontend')
 
-    .controller('showProfileController', ['$scope', '$http','$window', 'globalService', function ($scope, $http, $window, globalService) {
-
-
-        $scope.checkIfLoggedInBool = function() {
-            if (globalService.loadGlobal() != null) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        };
+    .controller('showProfileController', ['$scope', '$http','$window', 'userService', function ($scope, $http, $window, userService) {
         
-        if(globalService.loadGlobal() != null) {
-            var userData = globalService.loadGlobal();
+        if(userService.loadGlobal() != null) {
+
+            $scope.isLoggedIn = userService.loadGlobal() == null;
+
+            var userData = userService.loadGlobal();
             var app = this;
             app.prename = userData.prename;
             app.lastname = userData.lastname;

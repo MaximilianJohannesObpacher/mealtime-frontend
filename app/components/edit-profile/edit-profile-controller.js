@@ -3,20 +3,11 @@
  */
 angular.module('mealtime-frontend')
 
-    .controller('editProfileController', ['$scope','$http','globalService', '$window', function($scope, $http, globalService, $window) {
+    .controller('editProfileController', ['$scope','$http','userService', '$window', function($scope, $http, userService, $window) {
             var app = this;
 
-        $scope.checkIfLoggedInBool = function() {
-            if (globalService.loadGlobal() != null) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        };
-
-        if(globalService.loadGlobal() != null){
-            var userData = globalService.loadGlobal();
+        if(userService.loadGlobal() != null){
+            var userData = userService.loadGlobal();
             app.oldprename = userData.prename;
             app.oldlastname = userData.lastname;
             app.oldemail = userData.email;
@@ -24,6 +15,8 @@ angular.module('mealtime-frontend')
             app.olddescription = userData.description;
             app.oldpassword = userData.password;
             app._id = userData._id;
+
+            $scope.isLoggedIn = userService.loadGlobal() == null;
 
             this.edit = function (newprename, newlastname, newemail, newaddress, newdescription, newpassword) {
                 console.log("all new: prename: "+newprename+" lastname: "+newlastname+" email: "+newemail+" address: "+newaddress+" password: "+newpassword);
@@ -57,7 +50,7 @@ angular.module('mealtime-frontend')
                         description: newdescription,
                         password: newpassword
                     }).then(function(response){
-                    globalService.storeGlobal(response.data);
+                    userService.storeGlobal(response.data);
                     $window.location.href = '/#/profile/'+response.data._id;
                 }, function(response){
                     $window.location.href = '/';
