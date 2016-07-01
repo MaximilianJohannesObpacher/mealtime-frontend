@@ -18,10 +18,11 @@ angular.module('mealtime-frontend')
                 .then(function(response){
                     console.log("response status: "+response.status);
                         console.log("response status text: "+response.statusText);
-                        console.log("response status: "+response.data.email);
-                    $rootScope.currentUser = response.data;
-                    globalService.storeGlobal(response.data);
-                    $window.location.href = '/#/profile';
+                        console.log("response mail: "+response.data.email);
+                        console.log("response prename: "+response.data.prename);
+
+                        globalService.storeGlobal(response.data);
+                    $window.location.href = '/#/profile/'+response.data._id;
                 }, 
                     //on error print error message and redirect to login
                     function(response){
