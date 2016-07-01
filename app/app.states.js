@@ -16,8 +16,6 @@ angular.module('mealtime-frontend')
             .state('home', {
                 url: '/',
                 templateUrl: 'app/components/home/home.html',
-                controller: "homeController",
-                controllerAs: 'ctrl'
             })
             .state('404', {
                 url: '/404',
@@ -27,8 +25,6 @@ angular.module('mealtime-frontend')
                 // we'll add another state soon
                 url: '/createOffering',
                 templateUrl: 'app/components/create-offering/create-offering.html',
-                controller: 'CreateOfferingController',
-                controllerAs: 'ctrl'
             })
             .state('showOfferings', {
                 // we'll add another state soon
