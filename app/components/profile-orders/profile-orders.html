@@ -12,30 +12,81 @@
 
         <toast></toast>
 
-        <ul id="orderlist">
-            <li ng-repeat="order in app.orders">
+        <div class="row">
+            <div class="col-sm-6">
+                <ul id="orderlist">
+                    <li ng-repeat="order in app.orders">
 
-                <div id="offeringContainerRequest">
-                        <div class="marginLeft oleo-green mediumText row-margin">Request for {{order.mealName}} by {{order.guestName}}</div>
+                        <div id="offeringContainerRequest">
+                            <div class="marginLeft oleo-green mediumText row-margin">Request for {{order.mealName}} by
+                                {{order.guestName}}
+                            </div>
 
-                    <div class="row row-margin">
-                        <div class="col-sm-4 oleo-green marginLeft mediumText">Title:</div>
-                        <div id="orderTitle" class="col-sm-6 oleo-green mediumText">{{order.title}}</div>
-                    </div>
+                            <div class="row row-margin">
+                                <div class="col-sm-4 oleo-green marginLeft mediumText">Title:</div>
+                                <div id="orderTitle" class="col-sm-6 oleo-green mediumText">{{order.title}}</div>
+                            </div>
 
-                    <div class="row row-margin">
-                        <div class="col-sm-4 oleo-green marginLeft mediumText">Message:</div>
-                        <div id="orderMessage" class="col-sm-6 oleo-green mediumText">{{order.message}}</div>
-                    </div>
+                            <div class="row row-margin">
+                                <div class="col-sm-4 oleo-green marginLeft mediumText">Message:</div>
+                                <div id="orderMessage" class="col-sm-6 oleo-green mediumText">{{order.message}}</div>
+                            </div>
 
 
-                    <div class="row row-margin">
-                        <div class="col-sm-4 oleo-green marginLeft mediumText">Amount:</div>
-                        <div id="orderAmount" class="col-sm-6 oleo-green mediumText">{{order.amount}}</div>
-                    </div>
+                            <div class="row row-margin">
+                                <div class="col-sm-4 oleo-green marginLeft mediumText">Amount:</div>
+                                <div id="orderAmount" class="col-sm-6 oleo-green mediumText">{{order.amount}}</div>
+                            </div>
 
-                </div>
-            </li>
-        </ul>
+                            <div class="row button-margin">
+                                <div class="col-sm-6">
+                                    <a ng-click="app.answerOrder(order._id, order.mealId, order.guestId, order.amount, true)">
+                                        <button class="col-xs-4 btn-success y_n orderButton myButton" id="acceptButton">
+                                            Accept!
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a ng-click="app.answerOrder(order._id, order.mealId, order.guestId, order.amount, false)">
+                                        <button class="col-xs-4 btn-success y_n orderButton myButton"
+                                                id="declineButton">
+                                            Decline!
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul id="requestList">
+                    <li ng-repeat="request in app.requests">
+                        <a href="#/meal/{{request.mealId}}">
+
+                            <div id="offeringContainerProfile">
+                                <div id="leftOfferingContainer">
+                                    <span id="namelabelorders">{{request.mealName}} <br>by {{request.chefName}}</span>
+
+                                    <div class="checkicon-margin">
+                                        <img class="nutritionIcon" title="Request accepted!"
+                                             src="../../../assets/img/check.png" ng-show="request.accepted">
+
+                                        <img class="nutritionIcon" title="Request declined!"
+                                             src="../../../assets/img/cross.png" ng-show="!request.accepted">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
     </div>
+</div>
 </div>

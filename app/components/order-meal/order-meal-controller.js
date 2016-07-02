@@ -38,8 +38,10 @@ mealtime.controller("OrderMealController", function ($scope, $stateParams, $http
                     amount: amount,
                     eatIn: eatIn,
                     chefId: app.meal.chefId,
+                    chefName: app.meal.chef,
                     guestId: userService.loadGlobal()._id,
-                    guestName: userService.loadGlobal().prename
+                    guestName: userService.loadGlobal().prename,
+                    answered: false
                 });
 
             console.log("before ordermeal ", lastPage.loadGlobal());

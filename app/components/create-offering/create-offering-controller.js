@@ -102,7 +102,7 @@ myApp.controller('CreateOfferingController', ['$scope','$http', '$window', 'file
                     glutenfree: glutenfree,
                     lactosefree: lactosefree,
                     chefId: userService.loadGlobal()._id,
-                    guestId: []
+                    guestIds: []
                 });
 
             lastPage.storeGlobal("createoffering");

@@ -155,6 +155,16 @@ ul {
     white-space: nowrap;
 }
 
+#namelabelorders {
+    margin-left: 5%;
+    font-family: 'Oleo Script',
+    Helvetica, sans-serif;
+    width: 35%;
+    font-size: medium;
+    color: dimgray;
+    white-space: nowrap;
+}
+
 #pricelabelprofile {
     margin-top: 15px;
     margin-left: 30%;
@@ -194,6 +204,10 @@ ul {
     height: 100%;
     border-color: #499349;
     font-size: medium;
+}
+
+.button-margin {
+    margin-top: 5%;
 }
 
 #eatHereButtonContainer {
@@ -240,4 +254,24 @@ ul {
 .oleo-green{
     font-family: 'Oleo Script',
     Helvetica, sans-serif;
+}
+
+#acceptButton{
+    width: 150px;
+}
+
+#declineButton{
+    width: 150px;
+    margin-left: 0px;
+}
+
+#requestList{
+    padding-top: 80px;
+}
+
+.checkicon-margin{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
 }
