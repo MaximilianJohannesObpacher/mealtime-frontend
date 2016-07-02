@@ -1,0 +1,18 @@
+<div ng_controller="profileMealsController as app">
+
+    <div ng-include src="'app/components/header/header.html'"></div>
+
+    Grias eich servus bei de meals!
+
+    <ul>
+        <li ng-repeat="offering in app.offerings">
+            <div>
+                Offering:
+                <span>{{offering.name}}</span>
+                <span>{{offering.chef}}</span>
+            </div>
+
+        </li>
+    </ul>
+
+</div>

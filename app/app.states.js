@@ -55,8 +55,12 @@ angular.module('mealtime-frontend')
                 url: '/order/:mealId',
                 templateUrl: 'app/components/order-meal/order-meal.html'
             })
-            .state('orders', {
+            .state('profile/orders/:profileId', {
                 url: '/profile/orders/:profileId',
                 templateUrl: 'app/components/profile-orders/profile-orders.html'
+            })
+            .state('/profile/meals/:profileId', {
+                url: '/profile/meals/:profileId',
+                templateUrl: 'app/components/profile-meals/profile-meals.html'
             });
     }]);
