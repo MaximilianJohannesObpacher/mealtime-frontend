@@ -1,7 +1,41 @@
-<div ng_controller="profileOrdersController as app">
+<link rel="stylesheet" href="app/components/meal-detail/meal-detail-styles.css">
+<link rel="stylesheet" href="app/components/show-offerings/show-offerings-styles.css">
 
+
+<div ng_controller="profileOrdersController as app">
     <div ng-include src="'app/components/header/header.html'"></div>
 
-    Grias eich servus bei de orders!
+    <div id="pagecontainer" class="row">
+        <div id="topline">
+            <div id="toplinetext">These are your active offerings:</div>
+        </div>
 
+        <toast></toast>
+
+        <ul id="orderlist">
+            <li ng-repeat="order in app.orders">
+
+                <div id="offeringContainerRequest">
+                        <div class="marginLeft oleo-green mediumText row-margin">Request for {{order.mealName}} by {{order.guestName}}</div>
+
+                    <div class="row row-margin">
+                        <div class="col-sm-4 oleo-green marginLeft mediumText">Title:</div>
+                        <div id="orderTitle" class="col-sm-6 oleo-green mediumText">{{order.title}}</div>
+                    </div>
+
+                    <div class="row row-margin">
+                        <div class="col-sm-4 oleo-green marginLeft mediumText">Message:</div>
+                        <div id="orderMessage" class="col-sm-6 oleo-green mediumText">{{order.message}}</div>
+                    </div>
+
+
+                    <div class="row row-margin">
+                        <div class="col-sm-4 oleo-green marginLeft mediumText">Amount:</div>
+                        <div id="orderAmount" class="col-sm-6 oleo-green mediumText">{{order.amount}}</div>
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
