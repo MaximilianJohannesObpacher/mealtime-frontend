@@ -1,18 +1,47 @@
-<div ng_controller="profileMealsController as app">
+<link rel="stylesheet" href="app/components/show-offerings/show-offerings-styles.css">
 
+<div ng_controller="profileMealsController as app">
     <div ng-include src="'app/components/header/header.html'"></div>
 
-    Grias eich servus bei de meals!
+    <div id="pagecontainer" class="row">
+        <div id="topline">
+            <div id="toplinetext">These are your active offerings:</div>
+        </div>
 
-    <ul>
-        <li ng-repeat="offering in app.offerings">
-            <div>
-                Offering:
-                <span>{{offering.name}}</span>
-                <span>{{offering.chef}}</span>
-            </div>
+        <toast></toast>
 
-        </li>
-    </ul>
+        <ul id="meallist">
+            <li ng-repeat="offering in app.offerings">
+                <a href="#/meal/{{offering._id}}">
 
+                    <div id="offeringContainerProfile">
+
+
+                        <img src="/assets/img/food-715542_1920.jpg" id="offeringImageProfile"/>
+
+                        <div id="leftOfferingContainer">
+                        <span id="namelabelprofile">{{offering.name}}
+                        </span>
+                            <div id="pricelabelprofile">{{offering.price}} €</div>
+                        </div>
+
+                        <div id="middleOfferingContainer">
+                            <div id="cheflabelprofile">by {{offering.chef}}
+                            </div>
+                        </div>
+
+                        <div id="rightOfferingContainer">
+
+                            <a ng-click="app.deleteOffering(offering._id)" class="orderLink">
+                                <button class="col-xs-4 btn-success y_n orderButton" style="width:90px">
+                                    Delete!
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
