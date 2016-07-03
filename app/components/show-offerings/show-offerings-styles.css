@@ -64,6 +64,7 @@ ul {
     border-width: 2px;
     margin-top: 1%;
     position: relative;
+    margin-left: 10%;
 }
 
 #orderlist{
@@ -240,6 +241,15 @@ ul {
 }
 #toplinetext {
     margin-left: 25%;
+    color: white;
+    font-size: 30px;
+    line-height: 65px;
+    font-family: 'Oleo Script',
+    Helvetica, sans-serif;
+}
+
+#toplinetextOrders {
+    margin-left: 10%;
     color: white;
     font-size: 30px;
     line-height: 65px;

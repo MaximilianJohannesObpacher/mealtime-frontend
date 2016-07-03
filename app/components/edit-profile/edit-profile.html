@@ -24,13 +24,11 @@
 
         <!-- centerpart/formpart of the page -->
         <div class="col-sm-6 form-background">
-            <div class="oleo-green" id="prenameField">{{editCon.oldprename}}'s Profile</div>
-
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newprenameInput">New Prename:
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newprenameInput">New Prename:
                         (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newprename"
                                id="newprenameInput" placeholder="{{editCon.oldprename}}"/>
                     </div>
@@ -39,9 +37,9 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newlastnameInput">New Lastname:
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newlastnameInput">New Lastname:
                         (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newlastname"
                                id="newlastnameInput" placeholder="{{editCon.oldlastname}}"/>
                     </div>
@@ -50,9 +48,9 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newemailInput">New Email:
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newemailInput">New Email:
                         (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <input class="col-xs-8" type="email" maxlength="30" ng-model="editCon.newemail"
                                id="newemailInput" placeholder="{{editCon.oldemail}}"/>
                     </div>
@@ -61,9 +59,9 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newaddressInput">New Address:
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newaddressInput">New Address:
                         (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <input class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newaddress"
                                id="newaddressInput" placeholder="{{editCon.oldaddress}}"/>
                     </div>
@@ -72,9 +70,9 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newdescriptionInput">New
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newdescriptionInput">New
                         Description: (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <textarea class="col-xs-8" type="text" maxlength="30" ng-model="editCon.newdescription"
                                   id="newdescriptionInput" placeholder="{{editCon.olddescription}}" rows="5"/>
                     </div>
@@ -83,9 +81,9 @@
 
             <div class="row factcontainer">
                 <div class="verticalLine">
-                    <div class="col-sm-4 oleo-green mediumText smallMargin"><label for="newpasswordInput">New Password:
+                    <div class="col-sm-4 oleo mediumText smallMargin"><label for="newpasswordInput">New Password:
                         (optional)</label></div>
-                    <div class="col-sm-8 oleo-green mediumText smallMargin">
+                    <div class="col-sm-8 oleo mediumText smallMargin">
                         <input class="col-xs-8" type="password" maxlength="30" ng-model="editCon.newpassword"
                                id="newpasswordInput"/>
                     </div>
@@ -202,6 +200,10 @@
         margin-left: 20%;
         border-color: #499349;
         font-size: larger;
+    }
+
+    .form-background{
+        margin-top: 80px;
     }
 
 </style>
